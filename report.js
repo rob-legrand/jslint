@@ -42,7 +42,11 @@ export default Object.freeze({
 // <cite><address>LINE_NUMBER</address>MESSAGE</cite>
 // <samp>EVIDENCE</samp>
 
-        let fudge = Number(Boolean(data.option.fudge));
+        let fudge = (
+            Boolean(data.option.fudge)
+            ? 0
+            : 1
+        );
         let output = [];
         if (data.stop) {
             output.push("<center>JSLint was unable to finish.</center>");
@@ -71,7 +75,11 @@ export default Object.freeze({
 //     <dt>DETAIL</dt><dd>NAMES</dd>
 // </dl>
 
-        let fudge = Number(Boolean(data.option.fudge));
+        let fudge = (
+            Boolean(data.option.fudge)
+            ? 0
+            : 1
+        );
         let mode = (
             data.module
             ? "module"

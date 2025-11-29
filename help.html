@@ -419,11 +419,10 @@ a:active {
         <tr>
             <td id="fudge">Fudge the line and column numbers</td>
             <td><code>fudge</code></td>
-            <td><code>true</code> if the origin of a text file is line 1 column
-                1. Programmers know that number systems start at zero.
-                Unfortunately, most text editors start numbering lines and
+            <td><code>true</code> if the origin of a text file is line 0, column
+                0. Most text editors start numbering lines and
                 columns at one. JSLint will by default start
-                numbering at zero. Use this option to start the numbering at one
+                numbering at one. Use this option to start the numbering at zero
                 in its reports.</td>
         </tr>
         <tr>

@@ -21,7 +21,7 @@ import report from "./report.js";
 let rx_crlf = /\n|\r\n?/;
 let rx_separator = /[\s,;'"]+/;
 
-let fudge_unit = 0;
+let fudge_unit = 1;
 
 const aux = document.getElementById("JSLINT_AUX");
 const boxes = document.querySelectorAll("[type=checkbox]");
@@ -57,7 +57,11 @@ function clear() {
 }
 
 function fudge_change() {
-    fudge_unit = Number(fudge.checked);
+    fudge_unit = (
+        fudge.checked
+        ? 0
+        : 1
+    );
     show_numbers();
 }
 

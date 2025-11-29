@@ -480,7 +480,7 @@ let directive_mode;     // true if directives are still allowed.
 let early_stop;         // true if JSLint cannot finish.
 let exports;            // The exported names and values.
 let froms;              // The array collecting all import-from strings.
-let fudge;              // true if the natural numbers start with 1.
+let fudge;              // true if the natural numbers start with 0.
 let functionage;        // The current function.
 let functions;          // The array containing all of the functions.
 let global;             // The global object; the outermost context.
@@ -4901,8 +4901,8 @@ export default Object.freeze(function jslint(
         froms = [];
         fudge = (
             option.fudge
-            ? 1
-            : 0
+            ? 0
+            : 1
         );
         functions = [];
         global = {
