@@ -3818,11 +3818,11 @@ function amble(when) {
         let a_set = when[the_token.arity];
         let i_set;
 
-// If there are tasks associated with the token's arity...
+// If there are tasks associated with the token's arity . . .
 
         if (a_set !== undefined) {
 
-// If there are tasks associated with the token's id...
+// If there are tasks associated with the token's id . . .
 
             i_set = a_set[the_token.id];
             if (i_set !== undefined) {
