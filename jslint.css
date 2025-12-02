@@ -36,6 +36,10 @@ body {
     font-size: 48pt;
 }
 
+#JSLINT_TITLEBOX .rhl {
+    font-size: 12pt;
+}
+
 #JSLINT_ fieldset {
     background-color: gainsboro;
     border: 0;
