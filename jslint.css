@@ -31,9 +31,10 @@ body {
 }
 
 #JSLINT_TITLEBOX div {
-    color: darkslategray;
+    color: rgb(60, 0, 15);
     float: left;
     font-size: 48pt;
+    text-shadow: rgb(90, 90, 90) 0 0 10px;
 }
 
 #JSLINT_TITLEBOX .rhl {
