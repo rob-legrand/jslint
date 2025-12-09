@@ -3,6 +3,7 @@
     font-weight: bold;
     src: url('Programma-Bold.woff2') format('woff2');
 }
+
 @font-face {
     font-family: 'Daley';
     font-weight: bold;
@@ -52,6 +53,7 @@ body {
     padding: 0;
     width: auto;
 }
+
 #JSLINT_  legend {
     background-color: darkslategray;
     border: 0;
@@ -67,6 +69,7 @@ body {
     text-align: center;
     width: 100%;
 }
+
 #JSLINT_ button {
     background-color: darkslategray;
     border: 0;
@@ -83,6 +86,7 @@ body {
     padding-top: 0.25em;
     text-align: center;
 }
+
 #JSLINT_ button:hover {
     background-color: slategray;
     color: white;
@@ -175,11 +179,13 @@ a:link {
     white-space: normal;
     width: 95%;
 }
+
 #JSLINT_ label {
     font-family: sans-serif;
     font-size: 90%;
     padding-left: 0.25em;
 }
+
 #JSLINT_OPTIONS>div {
     float: left;
     margin: 0.5em;
@@ -193,6 +199,7 @@ a:link {
     font-size: 90%;
     margin-left: 1em;
 }
+
 #JSLINT_ dl {
     background-color: cornsilk;
     color: white;
@@ -202,6 +209,7 @@ a:link {
     padding-right: 1em;
     padding-top: 2pt;
 }
+
 #JSLINT_ dfn {
     color: black;
     display: block;
@@ -211,6 +219,7 @@ a:link {
     font-weight: bold;
     margin-bottom: 2pt;
 }
+
 #JSLINT_ dt {
     color: black;
     display: block;
@@ -222,6 +231,7 @@ a:link {
     width: 8em;
     text-align: right;
 }
+
 #JSLINT_ dd {
     color: black;
     display: block;
@@ -230,13 +240,16 @@ a:link {
     margin-left: 8em;
     padding-bottom: 2pt;
 }
+
 #JSLINT_WARNINGS>legend {
     background-color: indianred;
 }
+
 #JSLINT_WARNINGS>div {
     background-color: pink;
     padding: 1em;
 }
+
 #JSLINT_WARNINGS cite {
     color: black;
     display: block;
@@ -249,6 +262,7 @@ a:link {
     margin-top: 4pt;
     overflow-x: hidden;
 }
+
 #JSLINT_WARNINGS samp {
     background-color: lavenderblush;
     color: black;
@@ -341,6 +355,7 @@ a:link {
 .none {
     display: none;
 }
+
 .center {
     text-align: center;
 }
