@@ -404,6 +404,12 @@ a:active {
         into production.</td>
         </tr>
         <tr>
+            <td id="double">Tolerate double-quote strings</td>
+            <td><code>double</code></td>
+            <td><code>true</code> if <code>"</code><small>double quote</small>
+                should be allowed to enclose string literals.</td>
+        </tr>
+        <tr>
             <td id="eval">Tolerate <code>eval</code></td>
             <td><code>eval</code></td>
             <td><code>true</code> if <code>eval</code> should be allowed. In the
@@ -449,12 +455,6 @@ a:active {
         URLSearchParams, __dirname, __filename
 </code></div>
     <code>*/</code></blockquote></td>
-        </tr>
-        <tr>
-            <td id="single">Tolerate single quote strings</td>
-            <td><code>single</code></td>
-            <td><code>true</code> if <code>'</code><small>single quote</small>
-                should be allowed to enclose string literals. </td>
         </tr>
         <tr>
             <td>Tolerate <code>this</code><br></td>

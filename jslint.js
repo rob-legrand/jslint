@@ -90,7 +90,8 @@
     bad_module_name_a, bad_option_a, bad_property_a, bad_set, bitwise, block,
     body, browser, c, calls, catch, charCodeAt, closer, closure, code, column,
     concat, constant, context, convert, couch, create, d, dead, default, devel,
-    directive, directives, disrupt, dot, duplicate_a, edition, ellipsis, else,
+    directive, directives, disrupt, dot, double,
+    duplicate_a, edition, ellipsis, else,
     empty_block, eval, every, expected_a, expected_a_at_b_c,
     expected_a_b, expected_a_b_from_c_d, expected_a_before_b,
     expected_a_next_at_b, expected_digits_after_a, expected_four_digits,
@@ -106,7 +107,7 @@
     not_label_a, nr, nud, number_isNaN, ok, open, opening, option,
     out_of_scope_a, parameters, parent, pop, property, push, quote, raw,
     redefinition_a_b, replace, required_a_optional_b, reserved_a, role, search,
-    shebang, signature, single, slice, some, sort, split, startsWith, statement,
+    shebang, signature, slice, some, sort, split, startsWith, statement,
     stop, subscript_a, switch, test, this, thru, toString, todo_comment,
     tokens, too_long, too_many_digits, tree, try, type, u, unclosed_comment,
     unclosed_mega, unclosed_string, undeclared_a, unexpected_a,
@@ -115,7 +116,7 @@
     unexpected_expression_a, unexpected_label_a, unexpected_parens,
     unexpected_space_a_b, unexpected_statement_a, unexpected_trailing_space,
     unexpected_typeof_a, uninitialized_a, unreachable_a,
-    unregistered_property_a, unused_a, use_double, use_open, use_spaces,
+    unregistered_property_a, unused_a, use_open, use_single, use_spaces,
     used, value, var_loop, var_switch, variable, warning, warnings,
     weird_condition_a, weird_expression_a, weird_loop, weird_relation_a, white,
     wrap_condition, wrap_immediate, wrap_parameter, wrap_regexp, wrap_unary,
@@ -166,6 +167,7 @@ const allowed_option = {
     devel: [
         "alert", "confirm", "console", "prompt"
     ],
+    double: true,
     eval: true,
     for: true,
     fudge: true,
@@ -177,7 +179,6 @@ const allowed_option = {
         "setImmediate", "setInterval", "setTimeout", "TextDecoder",
         "TextEncoder", "URL", "URLSearchParams", "__dirname", "__filename"
     ],
-    single: true,
     this: true,
     white: true
 };
@@ -330,11 +331,11 @@ const bundle = {
     unreachable_a: "Unreachable '{a}'.",
     unregistered_property_a: "Unregistered property name '{a}'.",
     unused_a: "Unused '{a}'.",
-    use_double: "Use double quotes, not single quotes.",
     use_open: (
         "Wrap a ternary expression in parens, "
         + "with a line break after the left paren."
     ),
+    use_single: "Use single quotes, not double quotes.",
     use_spaces: "Use spaces, not tabs.",
     var_loop: "Don't declare variables in a loop.",
     var_switch: "Don't declare variables in a switch.",
@@ -1358,12 +1359,12 @@ function tokenize(source) {
 
 // The token is a string.
 
-        if (snippet === "\"") {
+        if (snippet === "'") {
             return string(snippet);
         }
-        if (snippet === "'") {
-            if (!option.single) {
-                warn_at("use_double", line, column);
+        if (snippet === "\"") {
+            if (!option.double) {
+                warn_at("use_single", line, column);
             }
             return string(snippet);
         }
@@ -4991,7 +4992,7 @@ export default Object.freeze(function jslint(
     }
     return {
         directives,
-        edition: "2020-11-06-RHL001",
+        edition: "2020-11-06-RHL002",
         exports,
         froms,
         functions,
