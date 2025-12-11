@@ -123,6 +123,8 @@
     wrapped, writable, y
 */
 
+const numSpacesIndent = 3;
+
 function empty() {
 
 // The empty function produces a new empty object that inherits nothing. This is
@@ -4707,13 +4709,13 @@ function whitage() {
                     if (opening) {
                         free = closer === ")" && left.free;
                         open = true;
-                        margin += 4;
+                        margin += numSpacesIndent;
                         if (right.role === "label") {
                             if (right.from !== 0) {
                                 expected_at(0);
                             }
                         } else if (right.switch) {
-                            at_margin(-4);
+                            at_margin(-numSpacesIndent);
                         } else {
                             at_margin(0);
                         }
@@ -4768,7 +4770,7 @@ function whitage() {
 // right must go at the margin, or if closed, a space between.
 
                     if (right.switch) {
-                        at_margin(-4);
+                        at_margin(-numSpacesIndent);
                     } else if (right.role === "label") {
                         if (right.from !== 0) {
                             expected_at(0);
@@ -4992,7 +4994,7 @@ export default Object.freeze(function jslint(
     }
     return {
         directives,
-        edition: "2020-11-06-RHL002",
+        edition: "2020-11-06-RHL003",
         exports,
         froms,
         functions,
