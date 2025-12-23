@@ -3,8 +3,6 @@ JSLint, The JavaScript Code Quality Tool
 Douglas Crockford
 douglas@crockford.com
 
-2019-03-15
-
 jslint.js contains the jslint function. It parses and analyzes a source file,
 returning an object with information about the file. It can also take an object
 that sets options.
@@ -31,7 +29,7 @@ herself by putting the spaces before her commas instead of after, or by putting
 extra spaces inside her parentheses. A great writer will slavishly conform to
 some rules of style, and that in no way constrains her power to express herself
 creatively. See for example William Strunk's The Elements of Style
-[http://www.crockford.com/style.html].
+[https://www.crockford.com/style.html].
 
 This applies to programming as well. Conforming to a consistent style improves
 readability, and frees you to express yourself in ways that matter. JSLint here
