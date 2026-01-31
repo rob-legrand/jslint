@@ -1802,7 +1802,7 @@ function enroll(name, role, readonly) {
 
 // Reserved words may not be enrolled.
 
-    if (syntax[id] !== undefined && id !== "ignore") {
+    if (syntax[id] !== undefined && id.slice(0, 6) !== "ignore") {
         warn("reserved_a", name);
     } else {
 
@@ -1827,7 +1827,7 @@ function enroll(name, role, readonly) {
                 }
             });
             if (earlier) {
-                if (id === "ignore") {
+                if (id.slice(0, 6) === "ignore") {
                     if (earlier.role === "variable") {
                         warn("unexpected_a", name);
                     }
@@ -2039,7 +2039,7 @@ function statement() {
     advance();
     if (token.identifier && next_token.id === ":") {
         the_label = token;
-        if (the_label.id === "ignore") {
+        if (the_label.id.slice(0, 6) === "ignore") {
             warn("unexpected_a", the_label);
         }
         advance(":");
@@ -2458,6 +2458,12 @@ constant("Function", "function", function () {
 constant("ignore", "undefined", function () {
     warn("unexpected_a", token);
     return token;
+});
+Array.from({length: 10}).forEach(function (ignore, index) {
+    constant("ignore" + index, "undefined", function () {
+        warn("unexpected_a", token);
+        return token;
+    });
 });
 constant("Infinity", "number", Infinity);
 constant("isFinite", "function", function () {
@@ -3296,7 +3302,7 @@ function do_var() {
         } else if (next_token.identifier) {
             const name = next_token;
             advance();
-            if (name.id === "ignore") {
+            if (name.id.slice(0, 6) === "ignore") {
                 warn("unexpected_a", name);
             }
             enroll(name, "variable", is_const);
@@ -3545,7 +3551,7 @@ stmt("import", function () {
     if (next_token.identifier) {
         name = next_token;
         advance();
-        if (name.id === "ignore") {
+        if (name.id.slice(0, 6) === "ignore") {
             warn("unexpected_a", name);
         }
         enroll(name, "variable", true);
@@ -3560,7 +3566,7 @@ stmt("import", function () {
                 }
                 name = next_token;
                 advance();
-                if (name.id === "ignore") {
+                if (name.id.slice(0, 6) === "ignore") {
                     warn("unexpected_a", name);
                 }
                 enroll(name, "variable", true);
@@ -3716,7 +3722,7 @@ stmt("try", function () {
             if (!next_token.identifier) {
                 return stop("expected_identifier_a", next_token);
             }
-            if (next_token.id !== "ignore") {
+            if (next_token.id.slice(0, 6) !== "ignore") {
                 ignored = undefined;
                 the_catch.name = next_token;
                 enroll(next_token, "exception", true);
@@ -4533,7 +4539,7 @@ postaction("unary", "+", function (thing) {
 
 function delve(the_function) {
     Object.keys(the_function.context).forEach(function (id) {
-        if (id !== "ignore") {
+        if (id.slice(0, 6) !== "ignore") {
             const name = the_function.context[id];
             if (name.parent === the_function) {
                 if (
