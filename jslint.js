@@ -5000,7 +5000,7 @@ export default Object.freeze(function jslint(
     }
     return {
         directives,
-        edition: "2020-11-06-RHL003",
+        edition: "2020-11-06-RHL004",
         exports,
         froms,
         functions,
