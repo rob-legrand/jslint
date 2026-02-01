@@ -1,7 +1,9 @@
-JSLint, The JavaScript Code Quality Tool (RHL edition)
+JSLint, The JavaScript Code Quality Tool
 
 original by Douglas Crockford
 douglas@crockford.com
+
+RHL edition by Rob LeGrand
 
 jslint.js contains the jslint function.  It parses and analyzes a source file,
 returning an object with information about the file.  It can also take an object
