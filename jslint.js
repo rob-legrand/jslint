@@ -101,9 +101,10 @@
     forEach, free, freeze, freeze_exports, from, froms, fud, fudge,
     function_in_loop, functions, g, getset, global, i, id, identifier, import,
     inc, indexOf, infix_in, init, initial, isArray, isNaN, join, json, keys,
-    label, label_a, lbp, led, length, level, line, lines, live, long, loop, m,
+    label, label_a, lbp, led, length, level, line, lines, live, loop, m,
     margin, match, message, misplaced_a, misplaced_directive_a, missing_browser,
     missing_m, module, naked_block, name, names, nested_comment, new, node,
+    nolong,
     not_label_a, nr, nud, number_isNaN, ok, open, opening, option,
     out_of_scope_a, parameters, parent, pop, property, push, quote, raw,
     redefinition_a_b, replace, required_a_optional_b, reserved_a, role, search,
@@ -174,13 +175,13 @@ const allowed_option = {
     for: true,
     fudge: true,
     getset: true,
-    long: true,
     node: [
         "Buffer", "clearImmediate", "clearInterval", "clearTimeout",
         "console", "exports", "module", "process", "require",
         "setImmediate", "setInterval", "setTimeout", "TextDecoder",
         "TextEncoder", "URL", "URLSearchParams", "__dirname", "__filename"
     ],
+    nolong: true,
     this: true,
     white: true
 };
@@ -661,7 +662,7 @@ function tokenize(source) {
 
         let at;
         if (
-            !option.long
+            option.nolong
             && whole_line.length > 80
             && !json_mode
             && first
@@ -5000,7 +5001,7 @@ export default Object.freeze(function jslint(
     }
     return {
         directives,
-        edition: "2020-11-06-RHL004",
+        edition: "2020-11-06-RHL005",
         exports,
         froms,
         functions,

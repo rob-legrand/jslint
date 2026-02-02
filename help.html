@@ -452,11 +452,6 @@ a:active {
             <td><code>true</code> if accessor properties are allowed in object literals.</td>
         </tr>
         <tr>
-            <td id="long">Tolerate long source lines</td>
-            <td><code>long</code></td>
-            <td><code>true</code> if a line can contain more than 80 characters.</td>
-        </tr>
-        <tr>
             <td id="node">Assume <a href="http://nodejs.org/">Node.js</a></td>
             <td><code>node</code></td>
             <td><code>true</code> if Node.js globals should be predefined. It
@@ -469,6 +464,11 @@ a:active {
         URLSearchParams, __dirname, __filename
 </code></div>
     <code>*/</code></blockquote></td>
+        </tr>
+        <tr>
+            <td id="nolong">Disallow long source lines</td>
+            <td><code>nolong</code></td>
+            <td><code>true</code> if a line can't contain more than 80 characters.</td>
         </tr>
         <tr>
             <td>Tolerate <code>this</code><br></td>
