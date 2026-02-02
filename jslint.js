@@ -97,13 +97,14 @@
     expected_a_next_at_b, expected_digits_after_a, expected_four_digits,
     expected_identifier_a, expected_line_break_a_b, expected_regexp_factor_a,
     expected_space_a_b, expected_statements_a, expected_string_a,
-    expected_type_string_a, exports, expression, extra, finally, flag, for,
+    expected_type_string_a, exports, expression, extra, finally, flag,
     forEach, free, freeze, freeze_exports, from, froms, fud, fudge,
     function_in_loop, functions, g, getset, global, i, id, identifier, import,
     inc, indexOf, infix_in, init, initial, isArray, isNaN, join, json, keys,
     label, label_a, lbp, led, length, level, line, lines, live, loop, m,
     margin, match, message, misplaced_a, misplaced_directive_a, missing_browser,
     missing_m, module, naked_block, name, names, nested_comment, new, node,
+    nofor,
     nolong,
     not_label_a, nr, nud, number_isNaN, ok, open, opening, option,
     out_of_scope_a, parameters, parent, pop, property, push, quote, raw,
@@ -172,7 +173,6 @@ const allowed_option = {
     ],
     double: true,
     eval: true,
-    for: true,
     fudge: true,
     getset: true,
     node: [
@@ -181,6 +181,7 @@ const allowed_option = {
         "setImmediate", "setInterval", "setTimeout", "TextDecoder",
         "TextEncoder", "URL", "URLSearchParams", "__dirname", "__filename"
     ],
+    nofor: true,
     nolong: true,
     this: true,
     white: true
@@ -3456,7 +3457,7 @@ stmt("export", function () {
 stmt("for", function () {
     let first;
     const the_for = token;
-    if (!option.for) {
+    if (option.nofor) {
         warn("unexpected_a", the_for);
     }
     not_top_level(the_for);
@@ -5001,7 +5002,7 @@ export default Object.freeze(function jslint(
     }
     return {
         directives,
-        edition: "2020-11-06-RHL005",
+        edition: "2020-11-06-RHL006",
         exports,
         froms,
         functions,

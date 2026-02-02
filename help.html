@@ -431,13 +431,6 @@ a:active {
                 feature of the language.</td>
         </tr>
         <tr>
-            <td>Tolerate <code>for</code> statement</td>
-            <td><code>for</code></td>
-            <td><code>true</code> if the <code>for</code> statement should be
-                allowed. It is almost always better to use the array methods
-                instead.</td>
-        </tr>
-        <tr>
             <td id="fudge">Fudge the line and column numbers</td>
             <td><code>fudge</code></td>
             <td><code>true</code> if the origin of a text file is line 0, column
@@ -464,6 +457,13 @@ a:active {
         URLSearchParams, __dirname, __filename
 </code></div>
     <code>*/</code></blockquote></td>
+        </tr>
+        <tr>
+            <td id="nofor">Disallow <code>for</code> statement</td>
+            <td><code>nofor</code></td>
+            <td><code>true</code> if the <code>for</code> statement shouldn't be
+                allowed. It is almost always better to use the array methods
+                instead.</td>
         </tr>
         <tr>
             <td id="nolong">Disallow long source lines</td>
