@@ -91,6 +91,10 @@ body {
     background-color: rgb(60, 0, 15);
 }
 
+#JSLINT_ACT button[name="JSLint"] {
+    width: 40%;
+}
+
 #JSLINT_ button:hover {
     background-color: slategray;
     color: white;
