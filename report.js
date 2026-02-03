@@ -43,7 +43,7 @@ export default Object.freeze({
 // <samp>EVIDENCE</samp>
 
         let fudge = (
-            Boolean(data.option.fudge)
+            data.option.fudge
             ? 0
             : 1
         );
@@ -76,7 +76,7 @@ export default Object.freeze({
 // </dl>
 
         let fudge = (
-            Boolean(data.option.fudge)
+            data.option.fudge
             ? 0
             : 1
         );
