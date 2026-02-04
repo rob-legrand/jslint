@@ -125,8 +125,6 @@
     wrapped, writable, y
 */
 
-const numSpacesIndent = 3;
-
 function empty() {
 
 // The empty function produces a new empty object that inherits nothing. This is
@@ -149,11 +147,10 @@ function populate(array, object = empty(), value = true) {
 const allowed_option = {
 
 // These are the options that are recognized in the option object or that may
-// appear in a /*jslint*/ directive. Most options will have a boolean value,
-// usually true. Some options will also predefine some number of global
-// variables.
+// appear in a /*jslint*/ directive. Most options will have a default value.
+// Some options will also predefine some number of global variables.
 
-    bitwise: true,
+    bitwise: false,
     browser: [
         "caches", "CharacterData", "clearInterval", "clearTimeout", "document",
         "DocumentType", "DOMException", "Element", "Event", "event", "fetch",
@@ -167,24 +164,25 @@ const allowed_option = {
         "emit", "getRow", "isArray", "log", "provides", "registerType",
         "require", "send", "start", "sum", "toJSON"
     ],
-    convert: true,
+    convert: false,
     devel: [
         "alert", "confirm", "console", "prompt"
     ],
-    double: true,
-    eval: true,
-    fudge: true,
-    getset: true,
+    double: false,
+    eval: false,
+    fudge: false,
+    getset: false,
+    indent: 3,
     node: [
         "Buffer", "clearImmediate", "clearInterval", "clearTimeout",
         "console", "exports", "module", "process", "require",
         "setImmediate", "setInterval", "setTimeout", "TextDecoder",
         "TextEncoder", "URL", "URLSearchParams", "__dirname", "__filename"
     ],
-    nofor: true,
-    nolong: true,
-    this: true,
-    white: true
+    nofor: false,
+    nolong: false,
+    this: false,
+    white: false
 };
 
 const anticondition = populate([
@@ -406,7 +404,7 @@ const rx_directive = tag_regexp ` ^ (
 const rx_directive_part = tag_regexp ` ^ (
     [ a-z A-Z $ _ ] [ a-z A-Z 0-9 $ _ ]*
 ) (?:
-    : \s* ( true | false )
+    : \s* ( true | false | [ 1-9 ] [ 0-9 ]* )
 )? ,? \s* ( .* ) $ `;
 // token
 const rx_token = tag_regexp ` ^ (
@@ -896,6 +894,13 @@ function tokenize(source) {
                         }
                     } else if (value === "false") {
                         option[name] = false;
+                    } else {
+                        warn("bad_option_a", the_comment, name + ":" + value);
+                    }
+                } else if (typeof allowed === "number") {
+                    const num_value = Number(value);
+                    if (Number.isInteger(num_value) && num_value > 0) {
+                        option[name] = num_value;
                     } else {
                         warn("bad_option_a", the_comment, name + ":" + value);
                     }
@@ -4717,13 +4722,13 @@ function whitage() {
                     if (opening) {
                         free = closer === ")" && left.free;
                         open = true;
-                        margin += numSpacesIndent;
+                        margin += option.indent;
                         if (right.role === "label") {
                             if (right.from !== 0) {
                                 expected_at(0);
                             }
                         } else if (right.switch) {
-                            at_margin(-numSpacesIndent);
+                            at_margin(-option.indent);
                         } else {
                             at_margin(0);
                         }
@@ -4778,7 +4783,7 @@ function whitage() {
 // right must go at the margin, or if closed, a space between.
 
                     if (right.switch) {
-                        at_margin(-numSpacesIndent);
+                        at_margin(-option.indent);
                     } else if (right.role === "label") {
                         if (right.from !== 0) {
                             expected_at(0);
@@ -4901,7 +4906,18 @@ export default Object.freeze(function jslint(
 ) {
     try {
         warnings = [];
-        option = Object.assign(empty(), option_object);
+        option = Object.assign(
+            Object.keys(allowed_option).reduce(
+                function (opts, name) {
+                    if (!Array.isArray(allowed_option[name])) {
+                        opts[name] = allowed_option[name];
+                    }
+                    return opts;
+                },
+                empty()
+            ),
+            option_object
+        );
         anon = "anonymous";
         block_stack = [];
         declared_globals = empty();
@@ -5002,7 +5018,7 @@ export default Object.freeze(function jslint(
     }
     return {
         directives,
-        edition: "2020-11-06-RHL006",
+        edition: "2020-11-06-RHL007",
         exports,
         froms,
         functions,
