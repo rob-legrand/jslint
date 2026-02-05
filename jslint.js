@@ -99,7 +99,10 @@
     expected_space_a_b, expected_statements_a, expected_string_a,
     expected_type_string_a, exports, expression, extra, finally, flag,
     forEach, free, freeze, freeze_exports, from, froms, fud, fudge,
-    function_in_loop, functions, g, getset, global, i, id, identifier, import,
+    funcstmt,
+    function_in_loop,
+    function_statement,
+    functions, g, getset, global, i, id, identifier, import,
     inc,
     includes,
     indent,
@@ -185,6 +188,7 @@ const allowed_option = {
     double: false,
     eval: false,
     fudge: false,
+    funcstmt: false,
     getset: false,
     indent: 3,
     node: [
@@ -294,6 +298,7 @@ const bundle = {
         "Expected 'Object.freeze('. All export values should be frozen."
     ),
     function_in_loop: "Don't make functions within a loop.",
+    function_statement: "Use a function expression, not a function statement.",
     infix_in: (
         "Unexpected 'in'. Compare with undefined, "
         + "or use the hasOwnProperty method instead."
@@ -2916,6 +2921,9 @@ function do_function(the_function) {
         if (the_function.arity === "statement") {
             if (!next_token.identifier) {
                 return stop("expected_identifier_a", next_token);
+            }
+            if (!option.funcstmt) {
+                warn("function_statement", next_token);
             }
             name = next_token;
             enroll(name, "variable", true);
