@@ -9,6 +9,7 @@
     froms, fudge, function, functions, global, id, isArray, join, json, keys,
     length, level, line, lines, message, module, name, names, option,
     parameters, parent, property, push, replace, role, signature, sort, stop,
+    test,
     warnings
 */
 
@@ -148,7 +149,7 @@ export default Object.freeze({
                         if (name.id === "{" || name.id === "[") {
                             name.names.forEach(extract);
                         } else {
-                            if (name.id.slice(0, 6) !== "ignore") {
+                            if (!(/^ignore[0-9]?$/).test(name.id)) {
                                 params.push(name.id);
                             }
                         }
