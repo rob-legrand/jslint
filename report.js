@@ -218,8 +218,8 @@ export default Object.freeze({
                 }
                 not_first = true;
                 if (length + key.length >= 80) {
-                    length = 4;
-                    output.push("\n   ");
+                    length = 3;
+                    output.push("\n  ");
                 }
                 output.push(" ", key);
                 length += key.length;
