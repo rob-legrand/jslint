@@ -2606,6 +2606,17 @@ infix(".", 170, function (left) {
         )
         && (left.id !== "+" || name.id !== "slice")
         && (
+            (
+                left.id !== "+"
+                && left.id !== "-"
+                && left.id !== "*"
+                && left.id !== "/"
+                && left.id !== "%"
+                && left.id !== "**"
+            )
+            || name.id !== "toString"
+        )
+        && (
             left.id !== "(regexp)"
             || (name.id !== "exec" && name.id !== "test")
         )
