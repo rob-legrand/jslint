@@ -572,8 +572,13 @@ a:active {
     statements, function expressions, enhanced object literals, and the
     <code>=&gt;</code>&nbsp;<small>fart</small> operator.</p>
 <p>The function statement creates a variable and assigns the function object to
-    it. It should be used in a file or function body, but not inside of a block.</p>
+    it. JavaScript allows it in a file or function body, but not inside of a block.</p>
 <blockquote> <code>function </code><var>name</var><code>(</code><var>parameters</var><code>) {</code>
+    <div><var>statements</var></div>
+    <code>}</code> </blockquote>
+<p>The function statement should be avoided; an explicit <code>const</code>
+    declaration should be used with a function expression instead.</p>
+<blockquote> <code>const </code><var>name</var><code> = function </code><var>name</var><code>(</code><var>parameters</var><code>) {</code>
     <div><var>statements</var></div>
     <code>}</code> </blockquote>
 <p>The function expression unfortunately looks like the function statement. It
