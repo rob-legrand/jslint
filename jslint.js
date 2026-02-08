@@ -128,7 +128,9 @@
     unexpected_expression_a, unexpected_label_a, unexpected_parens,
     unexpected_space_a_b, unexpected_statement_a, unexpected_trailing_space,
     unexpected_typeof_a, uninitialized_a, unreachable_a,
-    unregistered_property_a, unused_a, use_open, use_single, use_spaces,
+    unregistered_property_a, unused_a,
+    use_double,
+    use_open, use_single, use_spaces,
     used, value, var_loop, var_switch, variable, warning, warnings,
     weird_condition_a, weird_expression_a, weird_loop, weird_relation_a, white,
     wrap_condition, wrap_immediate, wrap_parameter, wrap_regexp, wrap_unary,
@@ -352,6 +354,7 @@ const bundle = {
     unreachable_a: "Unreachable '{a}'.",
     unregistered_property_a: "Unregistered property name '{a}'.",
     unused_a: "Unused '{a}'.",
+    use_double: "Use double quotes, not single quotes.",
     use_open: (
         "Wrap a ternary expression in parens, "
         + "with a line break after the left paren."
@@ -1388,10 +1391,13 @@ function tokenize(source) {
 // The token is a string.
 
         if (snippet === "'") {
+            if (json_mode) {
+                warn_at("use_double", line, column);
+            }
             return string(snippet);
         }
         if (snippet === "\"") {
-            if (!option.double) {
+            if (!json_mode && !option.double) {
                 warn_at("use_single", line, column);
             }
             return string(snippet);
@@ -5047,7 +5053,7 @@ export default Object.freeze(function jslint(
     }
     return {
         directives,
-        edition: "2020-11-06-RHL008",
+        edition: "2020-11-06-RHL009",
         exports,
         froms,
         functions,
