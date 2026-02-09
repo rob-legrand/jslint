@@ -132,7 +132,9 @@
     unregistered_property_a, unused_a,
     use_double,
     use_open, use_single, use_spaces,
-    used, value, var_loop, var_switch, variable, warning, warnings,
+    used, value, var_loop, var_switch,
+    vardec,
+    variable, warning, warnings,
     weird_condition_a, weird_expression_a, weird_loop, weird_relation_a, white,
     wrap_condition, wrap_immediate, wrap_parameter, wrap_regexp, wrap_unary,
     wrapped, writable, y
@@ -204,6 +206,7 @@ const allowed_option = {
     nolong: false,
     nolonghand: false,
     this: false,
+    vardec: false,
     white: false
 };
 
@@ -3252,7 +3255,14 @@ function do_var() {
 // A program may use var or let, but not both.
 
     if (!is_const) {
-        if (var_mode === undefined) {
+        if (!option.vardec && the_statement.id === "var") {
+            warn(
+                "expected_a_b",
+                the_statement,
+                "let",
+                the_statement.id
+            );
+        } else if (var_mode === undefined) {
             var_mode = the_statement.id;
         } else if (the_statement.id !== var_mode) {
             warn(
