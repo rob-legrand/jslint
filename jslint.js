@@ -114,6 +114,7 @@
     missing_m, module, naked_block, name, names, nested_comment, new, node,
     nofor,
     nolong,
+    nolonghand,
     not_label_a, nr, nud, number_isNaN, ok, open, opening, option,
     out_of_scope_a, parameters, parent, pop, property, push, quote, raw,
     redefinition_a_b,
@@ -201,6 +202,7 @@ const allowed_option = {
     ],
     nofor: false,
     nolong: false,
+    nolonghand: false,
     this: false,
     white: false
 };
@@ -3173,7 +3175,11 @@ prefix("{", function () {
                     let the_colon = next_token;
                     advance(":");
                     value = expression(0);
-                    if (value.id === name.id && value.id !== "function") {
+                    if (
+                        option.nolonghand
+                        && value.id === name.id
+                        && value.id !== "function"
+                    ) {
                         warn("unexpected_a", the_colon, ": " + name.id);
                     }
                 }
