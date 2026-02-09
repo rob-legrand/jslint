@@ -3364,6 +3364,9 @@ function do_var() {
                 warn("unexpected_a", name);
             }
             enroll(name, "variable", is_const);
+            if (the_statement.id === "var" && next_token.id === "=") {
+                warn("unexpected_a_after_b", name, "=", name.id);
+            }
             if (next_token.id === "=" || is_const) {
                 advance("=");
                 name.dead = false;
