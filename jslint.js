@@ -3159,6 +3159,14 @@ prefix("{", function () {
                     }
                     value = expression(Infinity, true);
                 } else if (next_token.id === "(") {
+                    if (name.id === "function") {
+                        warn(
+                            "unexpected_a_after_b",
+                            next_token,
+                            next_token.id,
+                            name.id
+                        );
+                    }
                     value = do_function({
                         arity: "unary",
                         from: name.from,
@@ -5072,7 +5080,7 @@ export default Object.freeze(function jslint(
     }
     return {
         directives,
-        edition: "2020-11-06-RHL009",
+        edition: "2020-11-06-RHL010",
         exports,
         froms,
         functions,
