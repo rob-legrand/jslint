@@ -209,7 +209,7 @@ a:link {
 }
 
 #JSLINT_ dl {
-    background-color: cornsilk;
+    background-color: #e0e0e0;  /* gray */
     color: white;
     margin: 0;
     padding-bottom: 2pt;
@@ -304,58 +304,60 @@ a:link {
 }
 
 #JSLINT_ dl.level0 {
-    color: black;
     background-color: white;
+    color: black;
 }
 
 #JSLINT_ dl.level1 {
+    background-color: #ffe0e0;  /* red */
     color: black;
-    background-color: #ffffe0;  /* yellow */
     margin-left: 1em;
 }
 
 #JSLINT_ dl.level2 {
+    background-color: #D0D0ff;  /* blue */
     color: black;
-    background-color: #e0ffe0;  /* green */
     margin-left: 2em;
 }
 
 #JSLINT_ dl.level3 {
+    background-color: #e0ffe0;  /* green */
     color: black;
-    background-color: #D0D0ff;  /* blue */
     margin-left: 3em;
 }
 
 #JSLINT_ dl.level4 {
-    background-color: #ffe0ff;  /* purple */
+    background-color: #ffe390;  /* orange */
     color: black;
     margin-left: 4em;
 }
 
 #JSLINT_ dl.level5 {
-    background-color: #ffe0e0;  /* red */
+    background-color: #ffe0ff;  /* purple */
     color: black;
     margin-left: 5em;
 }
 
 #JSLINT_ dl.level6 {
-    background-color: #ffe390;  /* orange */
+    background-color: #e0ffff;  /* cyan */
     color: black;
     margin-left: 6em;
 }
 
 #JSLINT_ dl.level7 {
-    background-color: #e0e0e0;  /* gray */
+    background-color: #ffffe0;  /* yellow */
     color: black;
     margin-left: 7em;
 }
 
 #JSLINT_ dl.level8 {
+    background-color: #d0d0d0;  /* darker gray */
     color: black;
     margin-left: 8em;
 }
 
 #JSLINT_ dl.level9 {
+    background-color: #e0e0e0;  /* gray */
     color: black;
     margin-left: 9em;
 }
