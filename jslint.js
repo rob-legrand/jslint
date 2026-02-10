@@ -2625,7 +2625,13 @@ infix(".", 170, function (left) {
                 && left.id !== "%"
                 && left.id !== "**"
             )
-            || name.id !== "toString"
+            || (
+                name.id !== "toExponential"
+                && name.id !== "toFixed"
+                && name.id !== "toLocaleString"
+                && name.id !== "toPrecision"
+                && name.id !== "toString"
+            )
         )
         && (
             left.id !== "(regexp)"
@@ -5082,7 +5088,7 @@ export default Object.freeze(function jslint(
     }
     return {
         directives,
-        edition: "2020-11-06-RHL011",
+        edition: "2020-11-06-RHL012",
         exports,
         froms,
         functions,
