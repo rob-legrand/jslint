@@ -4896,6 +4896,8 @@ function whitage() {
                     } else if (left.id === ";") {
                         if (open) {
                             at_margin(0);
+                        } else {
+                            one_space();
                         }
                     } else if (
                         left.arity === "ternary"
@@ -5080,7 +5082,7 @@ export default Object.freeze(function jslint(
     }
     return {
         directives,
-        edition: "2020-11-06-RHL010",
+        edition: "2020-11-06-RHL011",
         exports,
         froms,
         functions,
