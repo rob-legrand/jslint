@@ -476,6 +476,12 @@ a:active {
                 instead.</td>
         </tr>
         <tr>
+            <td id="nolet">Disallow <code>let</code> declarations<br></td>
+            <td><code>nolet</code></td>
+            <td><code>true</code> if <code>let</code> shouldn't be allowed.
+                It is better to use <code>const</code> when possible.</td>
+        </tr>
+        <tr>
             <td id="nolong">Disallow long source lines</td>
             <td><code>nolong</code></td>
             <td><code>true</code> if a line can't contain more than 80 characters.</td>
@@ -495,7 +501,8 @@ a:active {
             <td id="vardec">Tolerate <code>var</code> declarations<br></td>
             <td><code>vardec</code></td>
             <td><code>true</code> if <code>var</code> should be allowed.
-                It is better to use <code>let</code> instead.</td>
+                It is better to use <code>let</code> instead
+                (and <code>const</code> when possible).</td>
         </tr>
         <tr>
             <td id="white">Tolerate whitespace mess</td>
@@ -506,7 +513,7 @@ a:active {
 </table>
 <p>For example:</p>
 <pre>/*jslint
-    bitwise, node
+   bitwise, node
 */</pre>
 
 <h1 id=property><code>/*property*/</code></h1>
