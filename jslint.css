@@ -309,25 +309,25 @@ a:link {
 }
 
 #JSLINT_ dl.level1 {
-    background-color: #ffe0e0;  /* red */
+    background-color: #ffffe0;  /* yellow */
     color: black;
     margin-left: 1em;
 }
 
 #JSLINT_ dl.level2 {
-    background-color: #D0D0ff;  /* blue */
+    background-color: #e0ffe0;  /* green */
     color: black;
     margin-left: 2em;
 }
 
 #JSLINT_ dl.level3 {
-    background-color: #e0ffe0;  /* green */
+    background-color: #e0ffff;  /* cyan */
     color: black;
     margin-left: 3em;
 }
 
 #JSLINT_ dl.level4 {
-    background-color: #ffe390;  /* orange */
+    background-color: #e0e0ff;  /* blue */
     color: black;
     margin-left: 4em;
 }
@@ -339,13 +339,13 @@ a:link {
 }
 
 #JSLINT_ dl.level6 {
-    background-color: #e0ffff;  /* cyan */
+    background-color: #ffe0e0;  /* red */
     color: black;
     margin-left: 6em;
 }
 
 #JSLINT_ dl.level7 {
-    background-color: #ffffe0;  /* yellow */
+    background-color: #ffeecc;  /* orange */
     color: black;
     margin-left: 7em;
 }
