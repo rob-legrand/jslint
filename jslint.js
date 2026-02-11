@@ -274,91 +274,98 @@ const bundle = {
 // wound the inner child. But if you accept it as sound advice rather than as
 // personal criticism, it can make your programs better.
 
-    and: "The '&&' subexpression should be wrapped in parens.",
-    bad_assignment_a: "Bad assignment to '{a}'.",
-    bad_directive_a: "Bad directive '{a}'.",
+    and: "The \"&&\" subexpression should be wrapped in parens.",
+    bad_assignment_a: "Bad assignment to \"{a}\".",
+    bad_directive_a: "Bad directive \"{a}\".",
     bad_get: "A get function takes no parameters.",
-    bad_module_name_a: "Bad module name '{a}'.",
-    bad_option_a: "Bad option '{a}'.",
-    bad_property_a: "Bad property name '{a}'.",
+    bad_module_name_a: "Bad module name \"{a}\".",
+    bad_option_a: "Bad option \"{a}\".",
+    bad_property_a: "Bad property name \"{a}\".",
     bad_set: "A set function takes one parameter.",
-    duplicate_a: "Duplicate '{a}'.",
+    duplicate_a: "Duplicate \"{a}\".",
     empty_block: "Empty block.",
-    expected_a: "Expected '{a}'.",
-    expected_a_at_b_c: "Expected '{a}' at column {b}, not column {c}.",
-    expected_a_b: "Expected '{a}' and instead saw '{b}'.",
+    expected_a: "Expected \"{a}\".",
+    expected_a_at_b_c: "Expected \"{a}\" at column {b}, not column {c}.",
+    expected_a_b: "Expected \"{a}\" and instead saw \"{b}\".",
     expected_a_b_from_c_d: (
-        "Expected '{a}' to match '{b}' from line {c} and instead saw '{d}'."
+        "Expected \"{a}\" to match \"{b}\""
+        + " from line {c} and instead saw \"{d}\"."
     ),
-    expected_a_before_b: "Expected '{a}' before '{b}'.",
-    expected_a_next_at_b: "Expected '{a}' at column {b} on the next line.",
-    expected_digits_after_a: "Expected digits after '{a}'.",
-    expected_four_digits: "Expected four digits after '\\u'.",
-    expected_identifier_a: "Expected an identifier and instead saw '{a}'.",
-    expected_line_break_a_b: "Expected a line break between '{a}' and '{b}'.",
-    expected_regexp_factor_a: "Expected a regexp factor and instead saw '{a}'.",
-    expected_space_a_b: "Expected one space between '{a}' and '{b}'.",
-    expected_statements_a: "Expected statements before '{a}'.",
-    expected_string_a: "Expected a string and instead saw '{a}'.",
-    expected_type_string_a: "Expected a type string and instead saw '{a}'.",
+    expected_a_before_b: "Expected \"{a}\" before \"{b}\".",
+    expected_a_next_at_b: "Expected \"{a}\" at column {b} on the next line.",
+    expected_digits_after_a: "Expected digits after \"{a}\".",
+    expected_four_digits: "Expected four digits after \"\\u\".",
+    expected_identifier_a: "Expected an identifier and instead saw \"{a}\".",
+    expected_line_break_a_b: (
+        "Expected a line break between \"{a}\" and \"{b}\"."
+    ),
+    expected_regexp_factor_a: (
+        "Expected a regexp factor and instead saw \"{a}\"."
+    ),
+    expected_space_a_b: "Expected one space between \"{a}\" and \"{b}\".",
+    expected_statements_a: "Expected statements before \"{a}\".",
+    expected_string_a: "Expected a string and instead saw \"{a}\".",
+    expected_type_string_a: "Expected a type string and instead saw \"{a}\".",
     freeze_exports: (
-        "Expected 'Object.freeze('. All export values should be frozen."
+        "Expected \"Object.freeze(\". All export values should be frozen."
     ),
     function_in_loop: "Don't make functions within a loop.",
     function_statement: "Use a function expression, not a function statement.",
     infix_in: (
-        "Unexpected 'in'. Compare with undefined, "
+        "Unexpected \"in\". Compare with undefined, "
         + "or use the hasOwnProperty method instead."
     ),
-    label_a: "'{a}' is a statement label.",
-    misplaced_a: "Place '{a}' at the outermost level.",
+    label_a: "\"{a}\" is a statement label.",
+    misplaced_a: "Place \"{a}\" at the outermost level.",
     misplaced_directive_a: (
-        "Place the '/*{a}*/' directive before the first statement."
+        "Place the \"/*{a}*/\" directive before the first statement."
     ),
     missing_browser: "/*global*/ requires the Assume a browser option.",
-    missing_m: "Expected 'm' flag on a multiline regular expression.",
+    missing_m: "Expected \"m\" flag on a multiline regular expression.",
     naked_block: "Naked block.",
     nested_comment: "Nested comment.",
-    not_label_a: "'{a}' is not a label.",
+    not_label_a: "\"{a}\" is not a label.",
     number_isNaN: "Use Number.isNaN function to compare with NaN.",
-    out_of_scope_a: "'{a}' is out of scope.",
-    redefinition_a_b: "Redefinition of '{a}' from line {b}.",
+    out_of_scope_a: "\"{a}\" is out of scope.",
+    redefinition_a_b: "Redefinition of \"{a}\" from line {b}.",
     required_a_optional_b: (
-        "Required parameter '{a}' after optional parameter '{b}'."
+        "Required parameter \"{a}\" after optional parameter \"{b}\"."
     ),
-    reserved_a: "Reserved name '{a}'.",
-    subscript_a: "['{a}'] is better written in dot notation.",
+    reserved_a: "Reserved name \"{a}\".",
+    subscript_a: "[\"{a}\"] is better written in dot notation.",
     todo_comment: "Unexpected TODO comment.",
     too_long: "Line is longer than 80 characters.",
     too_many_digits: "Too many digits.",
     unclosed_comment: "Unclosed comment.",
     unclosed_mega: "Unclosed mega literal.",
     unclosed_string: "Unclosed string.",
-    undeclared_a: "Undeclared '{a}'.",
-    unexpected_a: "Unexpected '{a}'.",
-    unexpected_a_after_b: "Unexpected '{a}' after '{b}'.",
-    unexpected_a_before_b: "Unexpected '{a}' before '{b}'.",
-    unexpected_at_top_level_a: "Expected '{a}' to be in a function.",
-    unexpected_char_a: "Unexpected character '{a}'.",
+    undeclared_a: "Undeclared \"{a}\".",
+    unexpected_a: "Unexpected \"{a}\".",
+    unexpected_a_after_b: "Unexpected \"{a}\" after \"{b}\".",
+    unexpected_a_before_b: "Unexpected \"{a}\" before \"{b}\".",
+    unexpected_at_top_level_a: "Expected \"{a}\" to be in a function.",
+    unexpected_char_a: "Unexpected character \"{a}\".",
     unexpected_comment: "Unexpected comment.",
-    unexpected_directive_a: "When using modules, don't use directive '/*{a}'.",
-    unexpected_expression_a: (
-        "Unexpected expression '{a}' in statement position."
+    unexpected_directive_a: (
+        "When using modules, don't use directive \"/*{a}\"."
     ),
-    unexpected_label_a: "Unexpected label '{a}'.",
+    unexpected_expression_a: (
+        "Unexpected expression \"{a}\" in statement position."
+    ),
+    unexpected_label_a: "Unexpected label \"{a}\".",
     unexpected_parens: "Don't wrap function literals in parens.",
-    unexpected_space_a_b: "Unexpected space between '{a}' and '{b}'.",
+    unexpected_space_a_b: "Unexpected space between \"{a}\" and \"{b}\".",
     unexpected_statement_a: (
-        "Unexpected statement '{a}' in expression position."
+        "Unexpected statement \"{a}\" in expression position."
     ),
     unexpected_trailing_space: "Unexpected trailing space.",
     unexpected_typeof_a: (
-        "Unexpected 'typeof'. Use '===' to compare directly with {a}."
+        "Unexpected \"typeof\". Use \"===\" to compare directly with {a}."
     ),
-    uninitialized_a: "Uninitialized '{a}'.",
-    unreachable_a: "Unreachable '{a}'.",
-    unregistered_property_a: "Unregistered property name '{a}'.",
-    unused_a: "Unused '{a}'.",
+    uninitialized_a: "Uninitialized \"{a}\".",
+    unreachable_a: "Unreachable \"{a}\".",
+    unregistered_property_a: "Unregistered property name \"{a}\".",
+    unused_a: "Unused \"{a}\".",
     use_double: "Use double quotes, not single quotes.",
     use_open: (
         "Wrap a ternary expression in parens, "
@@ -368,10 +375,10 @@ const bundle = {
     use_spaces: "Use spaces, not tabs.",
     var_loop: "Don't declare variables in a loop.",
     var_switch: "Don't declare variables in a switch.",
-    weird_condition_a: "Weird condition '{a}'.",
-    weird_expression_a: "Weird expression '{a}'.",
+    weird_condition_a: "Weird condition \"{a}\".",
+    weird_expression_a: "Weird expression \"{a}\".",
     weird_loop: "Weird loop.",
-    weird_relation_a: "Weird relation '{a}'.",
+    weird_relation_a: "Weird relation \"{a}\".",
     wrap_condition: "Wrap the condition in parens.",
     wrap_immediate: (
         "Wrap an immediate function invocation in parentheses to assist "
@@ -4344,9 +4351,9 @@ postaction("binary", function (thing) {
     if (thing.id === "+") {
         if (!option.convert) {
             if (thing.expression[0].value === "") {
-                warn("expected_a_b", thing, "String(...)", "\"\" +");
+                warn("expected_a_b", thing, "String(...)", "'' +");
             } else if (thing.expression[1].value === "") {
-                warn("expected_a_b", thing, "String(...)", "+ \"\"");
+                warn("expected_a_b", thing, "String(...)", "+ ''");
             }
         }
     } else if (thing.id === "[") {
@@ -5088,7 +5095,7 @@ export default Object.freeze(function jslint(
     }
     return {
         directives,
-        edition: "2020-11-06-RHL012",
+        edition: "2020-11-06-RHL013",
         exports,
         froms,
         functions,
