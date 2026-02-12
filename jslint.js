@@ -2679,6 +2679,23 @@ infix("?.", 170, function (left) {
         )
         && (left.id !== "+" || name.id !== "slice")
         && (
+            (
+                left.id !== "+"
+                && left.id !== "-"
+                && left.id !== "*"
+                && left.id !== "/"
+                && left.id !== "%"
+                && left.id !== "**"
+            )
+            || (
+                name.id !== "toExponential"
+                && name.id !== "toFixed"
+                && name.id !== "toLocaleString"
+                && name.id !== "toPrecision"
+                && name.id !== "toString"
+            )
+        )
+        && (
             left.id !== "(regexp)"
             || (name.id !== "exec" && name.id !== "test")
         )
@@ -5111,7 +5128,7 @@ export default Object.freeze(function jslint(
     }
     return {
         directives,
-        edition: "2020-11-06-RHL015",
+        edition: "2020-11-06-RHL016",
         exports,
         froms,
         functions,
