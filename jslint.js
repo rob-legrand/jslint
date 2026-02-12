@@ -2612,7 +2612,11 @@ infix(".", 170, function (left) {
     if (
         (
             left.id !== "(string)"
-            || (name.id !== "indexOf" && name.id !== "repeat")
+            || (
+                name.id !== "indexOf"
+                && name.id !== "repeat"
+                && name.id !== "charCodeAt"
+            )
         )
         && (
             left.id !== "["
@@ -2666,7 +2670,11 @@ infix("?.", 170, function (left) {
     if (
         (
             left.id !== "(string)"
-            || (name.id !== "indexOf" && name.id !== "repeat")
+            || (
+                name.id !== "indexOf"
+                && name.id !== "repeat"
+                && name.id !== "charCodeAt"
+            )
         )
         && (
             left.id !== "["
