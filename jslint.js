@@ -160,11 +160,10 @@ function populate(array, object = empty(), value = true) {
     return object;
 }
 
+// ["ignore", "ignore0", "ignore1", . . . "ignore9"]
 const ignores = ["ignore"].concat(Array.from(
     {length: 10},
-    function (ignore, index) {
-        return "ignore" + index;
-    }
+    (ignore, index) => "ignore" + index
 ));
 
 const allowed_option = {
@@ -5112,7 +5111,7 @@ export default Object.freeze(function jslint(
     }
     return {
         directives,
-        edition: "2020-11-06-RHL014",
+        edition: "2020-11-06-RHL015",
         exports,
         froms,
         functions,
