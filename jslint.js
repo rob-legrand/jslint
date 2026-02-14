@@ -4601,7 +4601,7 @@ postaction("ternary", function (thing) {
         thing.expression[1].id === "true"
         && thing.expression[2].id === "false"
     ) {
-        warn("expected_a_b", thing, "!!", "?");
+        warn("expected_a_b", thing, "Boolean(...)", "?");
     } else if (
         thing.expression[1].id === "false"
         && thing.expression[2].id === "true"
@@ -5136,7 +5136,7 @@ export default Object.freeze(function jslint(
     }
     return {
         directives,
-        edition: "2020-11-06-RHL017",
+        edition: "2020-11-06-RHL018",
         exports,
         froms,
         functions,
