@@ -113,7 +113,7 @@
     margin, match, message, misplaced_a, misplaced_directive_a, missing_browser,
     missing_m, module, naked_block, name, names, nested_comment, new, node,
     nofor,
-    nolet,
+    noletdec,
     nolong,
     nolonghand,
     not_label_a, nr, nud, number_isNaN, ok, open, opening, option,
@@ -203,7 +203,7 @@ const allowed_option = {
         "TextEncoder", "URL", "URLSearchParams", "__dirname", "__filename"
     ],
     nofor: false,
-    nolet: false,
+    noletdec: false,
     nolong: false,
     nolonghand: false,
     this: false,
@@ -3303,7 +3303,7 @@ function do_var() {
 
     if (!is_const) {
         if (!option.vardec && the_statement.id === "var") {
-            if (option.nolet) {
+            if (option.noletdec) {
                 warn("unexpected_a", the_statement);
             } else {
                 warn(
@@ -3313,7 +3313,7 @@ function do_var() {
                     the_statement.id
                 );
             }
-        } else if (option.nolet && the_statement.id === "let") {
+        } else if (option.noletdec && the_statement.id === "let") {
             if (!option.vardec) {
                 warn("unexpected_a", the_statement);
             } else {
@@ -5136,7 +5136,7 @@ export default Object.freeze(function jslint(
     }
     return {
         directives,
-        edition: "2020-11-06-RHL018",
+        edition: "2020-11-06-RHL019",
         exports,
         froms,
         functions,
