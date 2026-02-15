@@ -354,6 +354,15 @@ a:active {
             <th>Meaning</th>
         </tr>
         <tr>
+            <td id="arraycnstr">Tolerate <code>Array</code> constructors<br></td>
+            <td><code>arraycnstr</code></td>
+            <td><code>true</code> if
+                <code>Array(</code><var>number</var><code>)</code> and <code>new
+                Array(</code><var>number</var><code>)</code> should be allowed. It
+                is better to use an array literal or <code>Array.from({length:
+                </code><var>number</var><code>})</code> instead.</td>
+        </tr>
+        <tr>
             <td id="bitwise">Tolerate bitwise operators</td>
             <td><code>bitwise</code></td>
             <td><code>true</code> if bitwise operators should  be allowed. The

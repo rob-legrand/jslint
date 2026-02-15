@@ -86,7 +86,9 @@
 // WARNING: JSLint will hurt your feelings.
 
 /*property
-    a, and, arity, assign, b, bad_assignment_a, bad_directive_a, bad_get,
+    a, and, arity,
+    arraycnstr,
+    assign, b, bad_assignment_a, bad_directive_a, bad_get,
     bad_module_name_a, bad_option_a, bad_property_a, bad_set, bitwise, block,
     body, browser, c, calls, catch, charCodeAt, closer, closure, code, column,
     concat, constant, context, convert, couch, create, d, dead, default, devel,
@@ -172,6 +174,7 @@ const allowed_option = {
 // appear in a /*jslint*/ directive. Most options will have a default value.
 // Some options will also predefine some number of global variables.
 
+    arraycnstr: false,
     bitwise: false,
     browser: [
         "caches", "CharacterData", "clearInterval", "clearTimeout", "document",
@@ -4459,7 +4462,20 @@ postaction("binary", "(", function (thing) {
             warn("wrap_immediate", thing);
         }
     } else if (left.identifier) {
-        if (the_new !== undefined) {
+        if (left.id === "Array") {
+            arg = thing.expression;
+            if (
+                !option.arraycnstr
+                || arg.length !== 2
+                || arg[1].id === "(string)"
+            ) {
+                warn("expected_a_b", left, "[]", (
+                    the_new !== undefined
+                    ? "new Array"
+                    : "Array"
+                ));
+            }
+        } else if (the_new !== undefined) {
             if (
                 left.id[0] > "Z"
                 || left.id === "Boolean"
@@ -4471,11 +4487,6 @@ postaction("binary", "(", function (thing) {
             } else if (left.id === "Function") {
                 if (!option.eval) {
                     warn("unexpected_a", left, "new Function");
-                }
-            } else if (left.id === "Array") {
-                arg = thing.expression;
-                if (arg.length !== 2 || arg[1].id === "(string)") {
-                    warn("expected_a_b", left, "[]", "new Array");
                 }
             } else if (left.id === "Object") {
                 warn(
@@ -5136,7 +5147,7 @@ export default Object.freeze(function jslint(
     }
     return {
         directives,
-        edition: "2020-11-06-RHL019",
+        edition: "2020-11-06-RHL020",
         exports,
         froms,
         functions,
