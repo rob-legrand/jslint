@@ -258,7 +258,7 @@ a:active {
 <h1 id=es6>ECMAScript Sixth Edition</h1>
 <p>Some of
     ES6&rsquo;s features are good, so JSLint will recognize the good
-    parts of ES6. </p>
+    parts of ES6.</p>
 <p>Currently, these features are recognized:</p>
 <ul>
     <li>The <code>...</code>&nbsp;<small>ellipsis</small> marker in parameter
@@ -561,7 +561,7 @@ a:active {
     The <code>const</code> statement is like <code>let</code> except that it
     marks the variable (but not its contents) as read only, making it an error
     to attempt to assign to the variable. When given a choice,
-    <code>const</code> is the best, <code>var</code> is the worst. </p>
+    <code>const</code> is the best and <code>var</code> is the worst.</p>
 <p>JSLint uses the intersection of the <code>var</code> rules and the
     <code>let</code> rules, and by doing so avoids the errors related to either.
     A name should be declared only once in a function. It should be declared
@@ -606,9 +606,9 @@ a:active {
     <code>}</code> </blockquote>
 <p>The function statement should be avoided; an explicit <code>const</code>
     declaration should be used with a function expression instead.</p>
-<blockquote> <code>const </code><var>name</var><code> = function </code><var>name</var><code>(</code><var>parameters</var><code>) {</code>
+<blockquote> <code>const </code><var>name</var><code> = function (</code><var>parameters</var><code>) {</code>
     <div><var>statements</var></div>
-    <code>}</code> </blockquote>
+    <code>};</code> </blockquote>
 <p>The function expression unfortunately looks like the function statement. It
     may appear anywhere that an expression may appear, but not in statement
     position and not in a loop. It produces a function object but does not
@@ -848,7 +848,7 @@ a:active {
     more obvious. JSLint will give warnings about things that are
     not necessarily wrong in the current situation, but which have been observed
     to mask or obscure errors. Avoid those things when there are better options
-    available. </p>
+    available.</p>
 <p>It is dangerous out there. JSLint is here to help.</p>
 <h1 id=warning>Warning</h1>
 <p>JSLint will hurt your feelings. Side effects may include
