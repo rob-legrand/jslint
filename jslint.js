@@ -4496,22 +4496,20 @@ postaction("binary", "(", function (thing) {
                     "new Object"
                 );
             }
-        } else {
-            if (
-                left.id[0] >= "A"
-                && left.id[0] <= "Z"
-                && left.id !== "Boolean"
-                && left.id !== "Number"
-                && left.id !== "String"
-                && left.id !== "Symbol"
-            ) {
-                warn(
-                    "expected_a_before_b",
-                    left,
-                    "new",
-                    artifact(left)
-                );
-            }
+        } else if (
+            left.id[0] >= "A"
+            && left.id[0] <= "Z"
+            && left.id !== "Boolean"
+            && left.id !== "Number"
+            && left.id !== "String"
+            && left.id !== "Symbol"
+        ) {
+            warn(
+                "expected_a_before_b",
+                left,
+                "new",
+                artifact(left)
+            );
         }
     } else if (left.id === ".") {
         let cack = the_new !== undefined;
