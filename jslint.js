@@ -4975,6 +4975,7 @@ function whitage() {
                         || left.id === "catch"
                         || left.id === "else"
                         || left.id === "finally"
+                        || left.id === "typeof"
                         || left.id === "while"
                         || right.id === "catch"
                         || right.id === "else"
@@ -5152,7 +5153,7 @@ export default Object.freeze(function jslint(
     }
     return {
         directives,
-        edition: "2020-11-06-RHL021",
+        edition: "2020-11-06-RHL022",
         exports,
         froms,
         functions,
