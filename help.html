@@ -373,22 +373,24 @@ a:active {
                 unless this option is selected.</td>
         </tr>
         <tr>
-            <td id="browser">Assume a browser </td>
+            <td id="browser">Assume a browser</td>
             <td><code>browser</code></td>
             <td><code>true</code> if the standard browser globals should be
                 predefined. This option will reject the use of
                 <code>import</code> and <code>export</code>. This option also
-                disallows the file form of the <code>&quot;use
-                strict&quot;</code> pragma. It does not supply
-                <code>self</code>; you will have to request that unnecessary
-                alias of the dreaded global object yourself. It adds the same
-                globals as this directive:
+                disallows the file form of the <code>'use strict'</code> pragma.
+                It does not supply <code>self</code>; you will have to request
+                that unnecessary alias of the dreaded global object yourself.
+                It adds the same globals as this directive:
                 <blockquote><code>/*global </code>
                 <div><code>
-                    clearInterval, clearTimeout, document, event, FileReader,
-                    FormData, history, localStorage, location, name, navigator,
+                    caches, CharacterData, clearInterval, clearTimeout, document,
+                    DocumentType, DOMException, Element, Event, event, fetch,
+                    FileReader, FontFace, FormData, history, IntersectionObserver,
+                    localStorage, location, MutationObserver, name, navigator,
                     screen, sessionStorage, setInterval, setTimeout, Storage,
-                    URL, window, XMLHttpRequest
+                    TextDecoder, TextEncoder, URL, window, Worker,
+                    XMLHttpRequest
                 </code></div>
                 <code>*/</code></blockquote>
             </td>
