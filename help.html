@@ -226,7 +226,7 @@ a:active {
     <code><a href="http://en.wikipedia.org/wiki/Lint_programming_tool">lint</a></code>
     was developed that would scan a source file, looking for problems.</p>
 <p>As the language matured, the definition of the language was
-    strengthened to eliminate some insecurities, and compilers got better
+    strengthened to eliminate some insecurities and compilers got better
     at issuing warnings. <code>lint</code> is no longer needed.</p>
 <p><a href="http://javascript.crockford.com/">JavaScript</a> is a
     young-for-its-age language. It was originally intended to do small tasks in
@@ -272,8 +272,8 @@ a:active {
         if the value of the variable is mutable, it can still be mutated.
         <code>const</code> is preferred to <code>let</code>.
     <li>Destructuring of arrays and objects is allowed in parameter lists and on
-        the left side of <code>let</code>, and <code>const</code>, but not
-        <code>var</code> or assignment statements, and  not deep destructuring
+        the left side of <code>let</code> and <code>const</code>, but not
+        <code>var</code> or assignment statements, and not deep destructuring
         or eliding.</li>
     <li>Enhanced object literals, providing shorter forms for function
         declaration and properties that are initialized by variables with the
@@ -283,7 +283,7 @@ a:active {
     <li><code>`</code>Megastring<code>`</code> literals, but not nested
         <code>`</code>megastring<code>`</code> literals.</li>
     <li>New global functions, such as <code>Map</code>, <code>Set</code>,
-        <code>WeakMap</code>, and <code>WeakSet</code>.</li>
+        <code>WeakMap</code> and <code>WeakSet</code>.</li>
     <li><code>0b</code>- and <code>0o</code>- number literals.</li>
 </ul>
 <p>The most important new feature of ES6 is proper tail calls. This has no
@@ -313,7 +313,7 @@ a:active {
     the first statement. They are written in the form of a comment, where the
     directive name is placed immediately after the opening of the comment before
     any whitespace. The three directives are <code>global</code>,
-    <code>jslint</code>, and <code>property</code>. Directives in a file are
+    <code>jslint</code> and <code>property</code>. Directives in a file are
     stronger than options selected from the UI or passed with the option object.</p>
 <h1 id=global><code>/*global*/</code></h1>
 <p>The <code>/*global*/</code> directive is used to specify a set of globals
@@ -332,8 +332,8 @@ a:active {
 <blockquote><code>/*global</code>
 <div><code>ADSAFE,  report, jslint</code></div>
 <code>*/</code></blockquote>
-<p>instructs JSLint to not give warnings about the global
-    variables <code>ADsafe</code>, <code>report</code>, and <code>jslint</code>.
+<p>instructs JSLint not to give warnings about the global
+    variables <code>ADsafe</code>, <code>report</code> and <code>jslint</code>.
     However, if any of those names are expected to be supplied by other files
     and those other files fail to do so, then execution errors will result. It
     is usually better to use top-level variable declarations instead:
@@ -398,9 +398,9 @@ a:active {
         <tr>
             <td id="convert">Tolerate conversion operators</td>
             <td><code>convert</code></td>
-            <td><code>true</code> if <code>!!</code>, <code>+</code> prefix,
+            <td><code>true</code> if <code>!!</code>, <code>+</code> prefix
                 and concatenation with <code>''</code> are allowed.
-                The <code>Boolean</code>, <code>Number</code>, and
+                The <code>Boolean</code>, <code>Number</code> and
                 <code>String</code> functions are preferred.</td>
         </tr>
         <tr>
@@ -419,10 +419,9 @@ a:active {
             <td id="devel">Assume in development</td>
             <td><code>devel</code></td>
             <td><code>true</code> if browser globals that are useful in
-                development should be predefined, and if <code>debugger</code>
+                development should be predefined and if <code>debugger</code>
                 statements and <code>TODO</code> comments
-                should be allowed. It adds the
-                same globals as this directive:
+                should be allowed. It adds the same globals as this directive:
                 <blockquote><code>/*global </code>
     <div><code>alert, confirm, console, prompt</code></div>
     <code> */</code></blockquote>Be sure to turn this option off before going
@@ -537,7 +536,7 @@ a:active {
 <p>JSLint can build the <code>/*property*/</code> list for you. At
     the bottom of its report, JSLint displays a
     <code>/*property*/</code> directive. It contains all of the names that were
-    used with dot notation, subscript notation, and object literals to name the
+    used with dot notation, subscript notation and object literals to name the
     properties of objects. You can look through the list for misspellings. You
     can copy the <code>/*property*/</code></code> directive to the top of your
     script file. JSLint will check the spelling of all property
@@ -557,11 +556,11 @@ a:active {
 }</pre>
 <h1 id=var><code>var let const</code></h1>
 <p>JavaScript provides three statements for declaring variables:
-    <code>var</code>, <code>let</code>, and <code>const</code>. The
+    <code>var</code>, <code>let</code> and <code>const</code>. The
     <code>var</code> statement suffers from a bad practice called hoisting. The
     <code>let</code> statement does not do hoisting and respects block scope.
     The <code>const</code> statement is like <code>let</code> except that it
-    marks the variable (but not its contents) as read only, making it an error
+    marks the variable (but not its contents) as read-only, making it an error
     to attempt to assign to the variable. When given a choice,
     <code>const</code> is the best and <code>var</code> is the worst.</p>
 <p>JSLint uses the intersection of the <code>var</code> rules and the
@@ -581,7 +580,7 @@ a:active {
     false positive results. This was mitigated by adding the <code>===</code>
     operator, leaving the broken <code>==</code> operator in place.</p>
 <p>JSLint attempts to minimize errors by the following rules:</p>
-<p><code>==</code> is not allowed. This avoids the false positives, and
+<p><code>==</code> is not allowed. This avoids the false positives and
     increases the visual distance between <code>=</code> and <code>===</code>.
     Assignments are not allowed in expression position, and comparisons are not
     allowed in statement position. This also reduces confusion.&nbsp;</p>
@@ -594,12 +593,12 @@ a:active {
     on it unless you are a beginner.</p>
 <p>JSLint expects that every statement will be followed by
     <code>;</code> except for <code>for</code>, <code>function</code>,
-    <code>if</code>, <code>switch</code>, <code>try</code>, and
+    <code>if</code>, <code>switch</code>, <code>try</code> and
     <code>while</code>. JSLint does not expect to see unnecessary
     semicolons, the empty statement, or empty blocks.</p>
 <h1 id=function><code>function =></code></h1>
 <p>JavaScript has four syntactic forms for making function objects: function
-    statements, function expressions, enhanced object literals, and the
+    statements, function expressions, enhanced object literals and the
     <code>=&gt;</code>&nbsp;<small>fat arrow</small> operator.</p>
 <p>The function statement creates a variable and assigns the function object to
     it. JavaScript allows it in a file or function body, but not inside of a block.</p>
@@ -630,7 +629,7 @@ a:active {
     out the words <code>function</code> and <code>return</code>:</p>
 <blockquote> <code>(</code><var>parameters</var><code>) =>
     </code><var>expression</var> </blockquote>
-<p>JSLint requires the parens around the parameters, and forbids a
+<p>JSLint requires the parens around the parameters and forbids a
     <code>{</code>&nbsp;<small>left brace</small> after the
     <code>=></code>&nbsp;<small>fat arrow</small> to avoid syntactic ambiguity.</p>
 <h1 id=comma>Comma</h1>
@@ -643,7 +642,7 @@ a:active {
 <h1 id=blocks>Blocks</h1>
 <p>JSLint expects blocks with <code>function</code>,
     <code>if</code>, <code>switch</code>, <code>while</code>, <code>for</code>,
-    <code>do</code>, and <code>try</code> statements and nowhere else.</p>
+    <code>do</code> and <code>try</code> statements and nowhere else.</p>
 <p>JSLint expects that <code>if</code>, <code>while</code>,
     <code>do</code> and <code>for</code> statements will be made with blocks
     <code>{</code>that is, with statements enclosed in braces<code>}</code>.</p>
@@ -703,7 +702,7 @@ a:active {
     separate name space. JSLint is more strict.</p>
 <p>JSLint expects labels only on statements that interact
     with <code>break</code>: <code>switch</code>, <code>while</code>,
-    <code>do</code>, and <code>for</code>. JSLint expects that
+    <code>do</code> and <code>for</code>. JSLint expects that
     labels will be distinct from vars and parameters.</p>
 <h1 id=unreachable>Unreachable Code</h1>
 <p>JSLint expects that a <code>return</code>, <code>break</code>,
@@ -712,7 +711,7 @@ a:active {
     <code>default</code>.</p>
 <h1 id=pluses>Confusing Pluses and Minuses</h1>
 <p>JSLint expects that <code>+</code> will not be followed by
-    <code>+</code> or <code>++</code>, and that <code>-</code> will not be
+    <code>+</code> or <code>++</code> and that <code>-</code> will not be
     followed by <code>-</code> or <code>--</code>. A misplaced space can turn
     <code>+ +</code> into <code>++</code>, an error that is difficult to see.
     Use parens to avoid confusion.</p>
@@ -752,7 +751,7 @@ a:active {
 <h1 id=new>Constructors and <code>new</code></h1>
 <p>Constructors are functions that are designed to be used with the
     <code>new</code> prefix. The <code>new</code> prefix creates a new object
-    based on the function's <code>prototype</code>, and binds that object to the
+    based on the function's <code>prototype</code> and binds that object to the
     function's implied <code>this</code> parameter. If you neglect to use the
     <code>new</code> prefix, no new object will be made and <code>this</code>
     will be bound to the global object.</p>
@@ -855,7 +854,7 @@ a:active {
 <h1 id=warning>Warning</h1>
 <p>JSLint will hurt your feelings. Side effects may include
     headache, irritability, dizziness, snarkiness, stomach pain, defensiveness,
-    dry mouth, cleaner code, and a reduced error rate.</p>
+    dry mouth, cleaner code and a reduced error rate.</p>
 <h1 id=reading>Further Reading</h1>
 <ul>
     <li><a href=function.html>The <code>jslint</code> function.</a></li>
