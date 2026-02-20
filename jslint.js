@@ -2244,6 +2244,7 @@ function left_check(left, right) {
 
 // Warn if the left is not one of these:
 //      e.b
+//      e?.b
 //      e[b]
 //      e()
 //      ?:
@@ -2261,7 +2262,7 @@ function left_check(left, right) {
         )
         && (
             left.arity !== "binary"
-            || (id !== "." && id !== "(" && id !== "[")
+            || (id !== "." && id !== "?." && id !== "(" && id !== "[")
         )
     ) {
         warn("unexpected_a", right);
@@ -5153,7 +5154,7 @@ export default Object.freeze(function jslint(
     }
     return {
         directives,
-        edition: "2020-11-06-RHL023",
+        edition: "2020-11-06-RHL024",
         exports,
         froms,
         functions,
