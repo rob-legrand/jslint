@@ -118,9 +118,11 @@ function call_jslint() {
         property.value = property_text;
         property_fieldset.style.display = "block";
         property.scrollTop = 0;
+        select.style.display = "inline-block";
         select.disable = false;
     } else {
         property_fieldset.style.display = "none";
+        select.style.display = "none";
         select.disable = true;
     }
     aux.style.display = "block";
