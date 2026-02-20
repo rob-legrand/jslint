@@ -337,9 +337,9 @@ a:active {
     However, if any of those names are expected to be supplied by other files
     and those other files fail to do so, then execution errors will result. It
     is usually better to use top-level variable declarations instead:
-<pre>    var ADSAFE;
-    var report;
-    var jslint; </pre>
+<pre>   var ADSAFE;
+   var report;
+   var jslint;</pre>
 <p>Using <code>var</code> in this way allows comparing a global variable to the
     <code>undefined</code> value to determine whether it is has been used in the global context.</p>
 <h1><code>/*jslint*/</code></h1>
@@ -552,7 +552,7 @@ a:active {
     parameter that will be ignored. Unused warnings will not be produced for
     <code>ignore</code>.
 <pre>function handler(ignore, value) {
-    return do_something_useful(value);
+   return do_something_useful(value);
 }</pre>
 <h1 id=var><code>var let const</code></h1>
 <p>JavaScript provides three statements for declaring variables:
@@ -648,12 +648,12 @@ a:active {
     <code>{</code>that is, with statements enclosed in braces<code>}</code>.</p>
 <p>JavaScript allows an <code>if</code> to be written like this:</p>
 <pre>if (<i>condition</i><code>)
-    </code><i>statement</i>;</pre>
+   </code><i>statement</i>;</pre>
 <p>That form is known to contribute to mistakes in projects where many
     programmers are working on the same code. That is why JSLint
     expects the use of a block:</p>
 <pre>if (<i>condition</i>) {
-    <i>statements</i>;
+   <i>statements</i>;
 }</pre>
 <p>Experience shows that this form is more resilient.</p>
 <h1 id=expression>Expression Statements</h1>
@@ -679,9 +679,9 @@ a:active {
     for a particular type or range of values, or it can exclude functions,
     or it can exclude properties from the prototype. For example,</p>
 <pre>for (name in object) {
-    if (object.hasOwnProperty(name)) {
-        . . .
-    }
+   if (object.hasOwnProperty(name)) {
+      . . .
+   }
 }</pre>
 <p>Note that the above code will fail if the object contains a property
     named <code>hasOwnProperty</code>. Use <code>Object.keys</code> instead.</p>
@@ -780,9 +780,9 @@ a:active {
     <code>:</code>&nbsp;<small>colon</small>  always begin a line and increase
     the indentation by 3 spaces.</p>
 <pre>return (
-    (the_token.id === "(string)" || the_token.id === "(number)")
-    ? String(the_token.value)
-    : the_token.id
+   (the_token.id === "(string)" || the_token.id === "(number)")
+   ? String(the_token.value)
+   : the_token.id
 );</pre>
 <p>The word <code>function</code> is always followed with one space.</p>
 <p>Clauses (<code>case</code>, <code>catch</code>, <code>default</code>,

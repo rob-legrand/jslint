@@ -4790,14 +4790,14 @@ function whitage() {
                 const at = (
                     free
                     ? margin
-                    : margin + 8
+                    : margin + 2 * option.indent
                 );
                 if (right.from < at) {
                     expected_at(at);
                 }
             } else {
-                if (right.from !== margin + 8) {
-                    expected_at(margin + 8);
+                if (right.from !== margin + 2 * option.indent) {
+                    expected_at(margin + 2 * option.indent);
                 }
             }
         }
@@ -5153,7 +5153,7 @@ export default Object.freeze(function jslint(
     }
     return {
         directives,
-        edition: "2020-11-06-RHL022",
+        edition: "2020-11-06-RHL023",
         exports,
         froms,
         functions,
