@@ -2620,6 +2620,10 @@ infix(".", 170, function (left) {
                 name.id !== "indexOf"
                 && name.id !== "repeat"
                 && name.id !== "charCodeAt"
+                && name.id !== "match"
+                && name.id !== "replace"
+                && name.id !== "toLowerCase"
+                && name.id !== "toUpperCase"
             )
         )
         && (
@@ -2678,6 +2682,10 @@ infix("?.", 170, function (left) {
                 name.id !== "indexOf"
                 && name.id !== "repeat"
                 && name.id !== "charCodeAt"
+                && name.id !== "match"
+                && name.id !== "replace"
+                && name.id !== "toLowerCase"
+                && name.id !== "toUpperCase"
             )
         )
         && (
@@ -5154,7 +5162,7 @@ export default Object.freeze(function jslint(
     }
     return {
         directives,
-        edition: "2020-11-06-RHL024",
+        edition: "2020-11-06-RHL025",
         exports,
         froms,
         functions,
