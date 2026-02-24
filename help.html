@@ -777,10 +777,10 @@ a:active {
     indentation.</p>
 <p>The ternary operator can be visually confusing, so
     <code>?</code>&nbsp;<small>question mark</small> and
-    <code>:</code>&nbsp;<small>colon</small>  always begin a line and increase
+    <code>:</code>&nbsp;<small>colon</small> always begin a line and increase
     the indentation by 3 spaces.</p>
 <pre>return (
-   (the_token.id === "(string)" || the_token.id === "(number)")
+   (the_token.id === '(string)' || the_token.id === '(number)')
    ? String(the_token.value)
    : the_token.id
 );</pre>
