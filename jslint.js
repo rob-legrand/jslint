@@ -1413,10 +1413,15 @@ function tokenize(source) {
             return string(snippet);
         }
         if (snippet === "\"") {
-            if (!json_mode && !option.double) {
+            const the_string = string(snippet);
+            if (
+                !json_mode
+                && !option.double
+                && !the_string.value.includes("'")
+            ) {
                 warn_at("use_single", line, column);
             }
-            return string(snippet);
+            return the_string;
         }
 
 // The token is a megastring. We don't allow any kind of mega nesting.
@@ -5170,7 +5175,7 @@ export default Object.freeze(function jslint(
     }
     return {
         directives,
-        edition: "2020-11-06-RHL027",
+        edition: "2020-11-06-RHL028",
         exports,
         froms,
         functions,
