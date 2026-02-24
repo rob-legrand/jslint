@@ -2633,6 +2633,10 @@ infix(".", 170, function (left) {
                 && name.id !== "forEach"
                 && name.id !== "join"
                 && name.id !== "map"
+                && name.id !== "filter"
+                && name.id !== "reduce"
+                && name.id !== "sort"
+                && name.id !== "reverse"
             )
         )
         && (left.id !== "+" || name.id !== "slice")
@@ -2695,6 +2699,10 @@ infix("?.", 170, function (left) {
                 && name.id !== "forEach"
                 && name.id !== "join"
                 && name.id !== "map"
+                && name.id !== "filter"
+                && name.id !== "reduce"
+                && name.id !== "sort"
+                && name.id !== "reverse"
             )
         )
         && (left.id !== "+" || name.id !== "slice")
@@ -5162,7 +5170,7 @@ export default Object.freeze(function jslint(
     }
     return {
         directives,
-        edition: "2020-11-06-RHL025",
+        edition: "2020-11-06-RHL026",
         exports,
         froms,
         functions,
