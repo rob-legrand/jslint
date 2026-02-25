@@ -339,7 +339,7 @@ const bundle = {
         "Required parameter \"{a}\" after optional parameter \"{b}\"."
     ),
     reserved_a: "Reserved name \"{a}\".",
-    subscript_a: "[\"{a}\"] is better written in dot notation.",
+    subscript_a: "['{a}'] is better written in dot notation.",
     todo_comment: "Unexpected TODO comment.",
     too_long: "Line is longer than 80 characters.",
     too_many_digits: "Too many digits.",
@@ -5178,7 +5178,7 @@ export default Object.freeze(function jslint(
     }
     return {
         directives,
-        edition: "2020-11-06-RHL029",
+        edition: "2020-11-06-RHL030",
         exports,
         froms,
         functions,
