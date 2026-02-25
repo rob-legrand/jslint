@@ -477,8 +477,8 @@ const rx_token = tag_regexp ` ^ (
       | = =?
     )?
   | (
-        0
-      | [ 1-9 ] [ 0-9 ]*
+        0 n ?
+      | [ 1-9 ] [ 0-9 ]* n ?
     )
 ) ( .* ) $ `;
 const rx_digits = /^[0-9]*/;
@@ -4219,7 +4219,8 @@ preaction("binary", function (thing) {
                 if (value === "null" || value === "undefined") {
                     warn("unexpected_typeof_a", right, value);
                 } else if (
-                    value !== "boolean"
+                    value !== "bigint"
+                    && value !== "boolean"
                     && value !== "function"
                     && value !== "number"
                     && value !== "object"
