@@ -100,7 +100,9 @@
     expected_identifier_a, expected_line_break_a_b, expected_regexp_factor_a,
     expected_space_a_b, expected_statements_a, expected_string_a,
     expected_type_string_a, exports, expression, extra, finally, flag,
-    forEach, free, freeze, freeze_exports, from, froms, fud, fudge,
+    forEach, free, freeze, freeze_exports, from,
+    fromCharCode,
+    froms, fud, fudge,
     funcstmt,
     function_in_loop,
     function_statement,
@@ -124,7 +126,9 @@
     reduce,
     replace, required_a_optional_b, reserved_a, role, search,
     shebang, signature, slice, some, sort, split, startsWith, statement,
-    stop, subscript_a, switch, test, this, thru, toString, todo_comment,
+    stop, subscript_a, switch, test, this, thru,
+    toLowerCase,
+    toString, todo_comment,
     tokens, too_long, too_many_digits, tree, try, type, u, unclosed_comment,
     unclosed_mega, unclosed_string, undeclared_a, unexpected_a,
     unexpected_a_after_b, unexpected_a_before_b, unexpected_at_top_level_a,
@@ -162,12 +166,42 @@ function populate(array, object = empty(), value = true) {
     return object;
 }
 
-// ["ignore", "ignore0", "ignore1", . . . "ignore9"]
+const uppercaseA = "A";
+// [
+//    "ignore", "ignore0", "ignore1", . . . "ignore9",
+//    "ignoreA", "ignoreB", . . . "ignoreZ",
+//    "_", "_0", "_1", . . . "_9",
+//    "_A", "_B", . . . "_Z",
+//    "_a", "_b", . . . "_z"
+// ]
 const ignores = [
     "ignore",
     ...Array.from(
         {length: 10},
         (ignore, index) => "ignore" + index
+    ),
+    ...Array.from(
+        {length: 26},
+        (ignore, index) => "ignore" + String.fromCharCode(
+            uppercaseA.charCodeAt() + index
+        )
+    ),
+    "_",
+    ...Array.from(
+        {length: 10},
+        (ignore, index) => "_" + index
+    ),
+    ...Array.from(
+        {length: 26},
+        (ignore, index) => "_" + String.fromCharCode(
+            uppercaseA.charCodeAt() + index
+        )
+    ),
+    ...Array.from(
+        {length: 26},
+        (ignore, index) => "_" + String.fromCharCode(
+            uppercaseA.toLowerCase().charCodeAt() + index
+        )
     )
 ];
 
@@ -5179,7 +5213,7 @@ export default Object.freeze(function jslint(
     }
     return {
         directives,
-        edition: "2020-11-06-RHL030",
+        edition: "2020-11-06-RHL031",
         exports,
         froms,
         functions,

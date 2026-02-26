@@ -554,6 +554,15 @@ a:active {
 <pre>function handler(ignore, value) {
    return do_something_useful(value);
 }</pre>
+<p>If you need more than one parameter ignored in a single function,
+you can use any of the following:</p>
+<pre>ignore,
+ignore0, ignore1, . . . ignore9,
+ignoreA, ignoreB, . . . ignoreZ,
+_,
+_0, _1, . . . _9,
+_A, _B, . . . _Z,
+_a, _b, . . . _z</pre>
 <h1 id=var><code>var let const</code></h1>
 <p>JavaScript provides three statements for declaring variables:
     <code>var</code>, <code>let</code> and <code>const</code>. The
