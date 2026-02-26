@@ -2908,7 +2908,7 @@ function parameter_list() {
                 param.names = [];
                 advance("{");
                 signature.push("{");
-                (function subparameter() {
+                (function brace_subparameter() {
                     let subparam = next_token;
                     if (!subparam.identifier) {
                         return stop("expected_identifier_a");
@@ -2934,7 +2934,7 @@ function parameter_list() {
                     if (next_token.id === ",") {
                         advance(",");
                         signature.push(", ");
-                        return subparameter();
+                        return brace_subparameter();
                     }
                 }());
                 list.push(param);
@@ -2958,7 +2958,7 @@ function parameter_list() {
                 param.names = [];
                 advance("[");
                 signature.push("[]");
-                (function subparameter() {
+                (function bracket_subparameter() {
                     const subparam = next_token;
                     if (!subparam.identifier) {
                         return stop("expected_identifier_a");
@@ -2972,7 +2972,7 @@ function parameter_list() {
                     }
                     if (next_token.id === ",") {
                         advance(",");
-                        return subparameter();
+                        return bracket_subparameter();
                     }
                 }());
                 list.push(param);
@@ -5213,7 +5213,7 @@ export default Object.freeze(function jslint(
     }
     return {
         directives,
-        edition: "2020-11-06-RHL031",
+        edition: "2020-11-06-RHL032",
         exports,
         froms,
         functions,
