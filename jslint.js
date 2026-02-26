@@ -85,6 +85,7 @@
 
 // WARNING: JSLint will hurt your feelings.
 
+/*jslint unordered */
 /*property
     a, and, arity,
     arraycnstr,
