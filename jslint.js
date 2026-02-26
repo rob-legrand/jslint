@@ -2511,6 +2511,7 @@ symbol("class");
 symbol("default");
 symbol("else");
 symbol("enum");
+symbol("extends");
 symbol("finally");
 symbol("implements");
 symbol("interface");
@@ -5214,7 +5215,7 @@ export default Object.freeze(function jslint(
     }
     return {
         directives,
-        edition: "2020-11-06-RHL032",
+        edition: "2020-11-06-RHL033",
         exports,
         froms,
         functions,
