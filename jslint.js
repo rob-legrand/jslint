@@ -115,7 +115,9 @@
     isInteger,
     isNaN, join, json, keys,
     label, label_a, lbp, led, length, level, line, lines, live, loop, m,
-    margin, match, message, misplaced_a, misplaced_directive_a, missing_browser,
+    margin, match, message,
+    methodshort,
+    misplaced_a, misplaced_directive_a, missing_browser,
     missing_m, module, naked_block, name, names, nested_comment, new, node,
     nofor,
     noletdec,
@@ -237,6 +239,7 @@ const allowed_option = {
     funcstmt: false,
     getset: false,
     indent: 3,
+    methodshort: false,
     node: [
         "Buffer", "clearImmediate", "clearInterval", "clearTimeout",
         "console", "exports", "module", "process", "require",
@@ -3262,7 +3265,10 @@ prefix("{", function () {
                     }
                     value = expression(Infinity, true);
                 } else if (next_token.id === "(") {
-                    if (name.id === "function") {
+                    if (
+                        !option.methodshort
+                        || name.id === "function"
+                    ) {
                         warn(
                             "unexpected_a_after_b",
                             next_token,
@@ -5215,7 +5221,7 @@ export default Object.freeze(function jslint(
     }
     return {
         directives,
-        edition: "2020-11-06-RHL033",
+        edition: "2020-11-06-RHL034",
         exports,
         froms,
         functions,
