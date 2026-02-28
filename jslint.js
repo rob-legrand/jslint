@@ -373,7 +373,7 @@ const bundle = {
     naked_block: "Naked block.",
     nested_comment: "Nested comment.",
     not_label_a: "\"{a}\" is not a label.",
-    number_isNaN: "Use Number.isNaN function to compare with NaN.",
+    number_isNaN: "Use the Number.isNaN function to compare with NaN.",
     out_of_scope_a: "\"{a}\" is out of scope.",
     redefinition_a_b: "Redefinition of \"{a}\" from line {b}.",
     required_a_optional_b: (
@@ -5224,7 +5224,7 @@ export default Object.freeze(function jslint(
     }
     return {
         directives,
-        edition: "2020-11-06-RHL034",
+        edition: "2020-11-06-RHL035",
         exports,
         froms,
         functions,
