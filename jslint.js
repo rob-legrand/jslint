@@ -220,8 +220,11 @@ const allowed_option = {
         "caches", "CharacterData", "clearInterval", "clearTimeout", "document",
         "DocumentType", "DOMException", "Element", "Event", "event", "fetch",
         "FileReader", "FontFace", "FormData", "history", "IntersectionObserver",
-        "localStorage", "location", "MutationObserver", "name", "navigator",
+        "localStorage", "location",
+        "matchMedia",
+        "MutationObserver", "name", "navigator",
         "screen", "sessionStorage", "setInterval", "setTimeout", "Storage",
+        "structuredClone",
         "TextDecoder", "TextEncoder", "URL", "window", "Worker",
         "XMLHttpRequest"
     ],
