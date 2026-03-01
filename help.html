@@ -215,10 +215,10 @@ a:active {
 </center>
 <h1 id=good>Good Parts</h1>
 <p>The Principle of the Good Parts is</p>
-<blockquote> If a feature is sometimes useful and sometimes dangerous and if
-    there is a  better option then always use the better option. </blockquote>
+<blockquote>If a feature is sometimes useful and sometimes dangerous and if
+    there is a better option then always use the better option.</blockquote>
 <p>JSLint is a JavaScript program that looks for problems in
-    JavaScript programs. It is a code quality tool.</p>
+    JavaScript programs. It is a code-quality tool.</p>
 <p>When <a href="http://en.wikipedia.org/wiki/C_programming_language">C</a> was
     a <a href="https://www.csapp.cs.cmu.edu/2e/docs/chistory.html">young</a>
     programming language, there were several common programming errors that
@@ -299,11 +299,11 @@ a:active {
     <p><code>import </code><var>name</var><code> from </code><var>stringliteral</var><code>;</code></p>
     <p><code>import {</code><var>name</var><code>} from </code><var>stringliteral</var><code>;</code></p>
     <p><code>import(</code><var>string</var><code>).then(</code><var>function</var><code>);</code></p>
-<p><code>export default function () {};</code></p>
-<p><code>export default function <var>name</var>() {};</code></p>
+    <p><code>export default function () {};</code></p>
+    <p><code>export default function <var>name</var>() {};</code></p>
     <p><code>export default </code><var>expression</var><code>;</code></p>
-    <p><code>export  function <var>name</var>() {}</code></p>
-    <p><code>export  </code><var>name</var><code>; // </code> where <var>name</var> is <code>const</code></p>
+    <p><code>export function <var>name</var>() {}</code></p>
+    <p><code>export </code><var>name</var><code>; // </code> where <var>name</var> is <code>const</code></p>
     <p><code>export {</code><var>name</var><code>}</code><code>;</code></p>
 </blockquote>
 <h1 id=directives>Directives</h1>
@@ -330,7 +330,7 @@ a:active {
     execution environment.
 <p>For example:
 <blockquote><code>/*global</code>
-<div><code>ADSAFE,  report, jslint</code></div>
+<div><code>ADSAFE, report, jslint</code></div>
 <code>*/</code></blockquote>
 <p>instructs JSLint not to give warnings about the global
     variables <code>ADsafe</code>, <code>report</code> and <code>jslint</code>.
@@ -616,33 +616,33 @@ _a, _b, . . . _z</pre>
     <code>=&gt;</code>&nbsp;<small>fat arrow</small> operator.</p>
 <p>The function statement creates a variable and assigns the function object to
     it. JavaScript allows it in a file or function body, but not inside of a block.</p>
-<blockquote> <code>function </code><var>name</var><code>(</code><var>parameters</var><code>) {</code>
+<blockquote><code>function </code><var>name</var><code>(</code><var>parameters</var><code>) {</code>
     <div><var>statements</var></div>
-    <code>}</code> </blockquote>
+    <code>}</code></blockquote>
 <p>The function statement should be avoided; an explicit <code>const</code>
     declaration should be used with a function expression instead.</p>
-<blockquote> <code>const </code><var>name</var><code> = function (</code><var>parameters</var><code>) {</code>
+<blockquote><code>const </code><var>name</var><code> = function (</code><var>parameters</var><code>) {</code>
     <div><var>statements</var></div>
-    <code>};</code> </blockquote>
+    <code>};</code></blockquote>
 <p>The function expression unfortunately looks like the function statement. It
     may appear anywhere that an expression may appear, but not in statement
     position and not in a loop. It produces a function object but does not
     create a variable in which to store it.</p>
-<blockquote> <code>function (</code><var>parameters</var><code>) {</code>
+<blockquote><code>function (</code><var>parameters</var><code>) {</code>
     <div><var>statements</var></div>
-    <code>}</code> </blockquote>
+    <code>}</code></blockquote>
 <p>The enhanced object literal provides an ES6 shorthand for creating a property
     whose value is a function, saving you from having to type
     <code>:</code>&nbsp;<small>colon</small> and <code>function</code>.</p>
-<blockquote> <code>{</code>
+<blockquote><code>{</code>
     <div><var>name</var><code>(</code><var>parameters</var><code>) {</code>
         <div><var>statements</var></div>
         <code>}</code></div>
-    <code>}</code> </blockquote>
+    <code>}</code></blockquote>
 <p>Finally, ES6 provides an even shorter form of function expression that leaves
     out the words <code>function</code> and <code>return</code>:</p>
-<blockquote> <code>(</code><var>parameters</var><code>) =>
-    </code><var>expression</var> </blockquote>
+<blockquote><code>(</code><var>parameters</var><code>) =>
+    </code><var>expression</var></blockquote>
 <p>JSLint requires the parens around the parameters and forbids a
     <code>{</code>&nbsp;<small>left brace</small> after the
     <code>=></code>&nbsp;<small>fat arrow</small> to avoid syntactic ambiguity.</p>
