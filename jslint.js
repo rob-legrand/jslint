@@ -361,7 +361,7 @@ const bundle = {
     function_statement: "Use a function expression, not a function statement.",
     infix_in: (
         "Unexpected \"in\". Compare with undefined, "
-        + "or use the hasOwnProperty method instead."
+        + "or use the Object.hasOwn function instead."
     ),
     label_a: "\"{a}\" is a statement label.",
     misplaced_a: "Place \"{a}\" at the outermost level.",
@@ -5224,7 +5224,7 @@ export default Object.freeze(function jslint(
     }
     return {
         directives,
-        edition: "2020-11-06-RHL035",
+        edition: "2020-11-06-RHL036",
         exports,
         froms,
         functions,
