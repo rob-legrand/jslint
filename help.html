@@ -698,7 +698,10 @@ _a, _b, . . . _z</pre>
    }
 }</pre>
 <p>Note that the above code will fail if the object contains a property
-    named <code>hasOwnProperty</code>. Use <code>Object.keys</code> instead.</p>
+    named <code>hasOwnProperty</code>. Use <code>Object.keys</code> instead:</p>
+<pre>Object.keys(object).forEach(function (name) {
+   . . .
+});</pre>
 <h1 id=switch><code>switch</code></h1>
 <p>A common error in <code>switch</code> statements is to forget to place a
     <code>break</code> statement after each case, resulting in unintended
