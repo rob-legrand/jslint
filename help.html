@@ -698,7 +698,15 @@ _a, _b, . . . _z</pre>
    }
 }</pre>
 <p>Note that the above code will fail if the object contains a property
-    named <code>hasOwnProperty</code>. Use <code>Object.keys</code> instead:</p>
+    named <code>hasOwnProperty</code>.
+    Using <code>Object.hasOwn</code> avoids that problem:</p>
+<pre>for (name in object) {
+   if (Object.hasOwn(object, name)) {
+      . . .
+   }
+}</pre>
+<p>Even better, avoid <code>for</code> <code>in</code> entirely and
+    use <code>Object.keys</code> instead:</p>
 <pre>Object.keys(object).forEach(function (name) {
    . . .
 });</pre>
