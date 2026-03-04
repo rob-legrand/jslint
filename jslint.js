@@ -2491,7 +2491,7 @@ function ternary(id1, id2) {
         token.arity = "ternary";
         the_token.arity = "ternary";
         the_token.expression = [left, second, expression(10)];
-        if (next_token.id !== ")") {
+        if (next_token.id !== ")" && next_token.id !== "]") {
             warn("use_open", the_token);
         }
         return the_token;
@@ -5228,7 +5228,7 @@ export default Object.freeze(function jslint(
     }
     return {
         directives,
-        edition: "2020-11-06-RHL037",
+        edition: "2020-11-06-RHL038",
         exports,
         froms,
         functions,
