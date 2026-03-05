@@ -2689,6 +2689,8 @@ infix(".", 170, function (left) {
                 && name.id !== "reduce"
                 && name.id !== "toSorted"
                 && name.id !== "toReversed"
+                && name.id !== "find"
+                && name.id !== "findIndex"
             )
         )
         && (left.id !== "+" || name.id !== "slice")
@@ -2757,6 +2759,8 @@ infix("?.", 170, function (left) {
                 && name.id !== "reduce"
                 && name.id !== "toSorted"
                 && name.id !== "toReversed"
+                && name.id !== "find"
+                && name.id !== "findIndex"
             )
         )
         && (left.id !== "+" || name.id !== "slice")
@@ -5228,7 +5232,7 @@ export default Object.freeze(function jslint(
     }
     return {
         directives,
-        edition: "2020-11-06-RHL040",
+        edition: "2020-11-06-RHL041",
         exports,
         froms,
         functions,
