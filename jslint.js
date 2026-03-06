@@ -2788,6 +2788,9 @@ infix("?.", 170, function (left) {
     ) {
         left_check(left, the_token);
     }
+    if (name.id === "[" || name.id === "(") {
+        return left;
+    }
     if (!name.identifier) {
         stop("expected_identifier_a");
     }
@@ -5232,7 +5235,7 @@ export default Object.freeze(function jslint(
     }
     return {
         directives,
-        edition: "2020-11-06-RHL041",
+        edition: "2020-11-06-RHL042",
         exports,
         froms,
         functions,
