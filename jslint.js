@@ -2074,7 +2074,7 @@ function are_similar(a, b) {
         return false;
     }
     if (a.arity === b.arity && a.id === b.id) {
-        if (a.id === ".") {
+        if (a.id === "." || a.id === "?.") {
             return (
                 are_similar(a.expression, b.expression)
                 && are_similar(a.name, b.name)
@@ -5235,7 +5235,7 @@ export default Object.freeze(function jslint(
     }
     return {
         directives,
-        edition: "2020-11-06-RHL042",
+        edition: "2020-11-06-RHL043",
         exports,
         froms,
         functions,
