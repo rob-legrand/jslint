@@ -115,7 +115,9 @@
     isInteger,
     isNaN, join, json, keys,
     label, label_a, lbp, led, length, level, line, lines, live, loop, m,
-    margin, match, message,
+    margin, match,
+    maxlen,
+    message,
     methodshort,
     misplaced_a, misplaced_directive_a, missing_browser,
     missing_m, module, naked_block, name, names, nested_comment, new, node,
@@ -242,6 +244,7 @@ const allowed_option = {
     funcstmt: false,
     getset: false,
     indent: 3,
+    maxlen: 160,
     methodshort: false,
     node: [
         "Buffer", "clearImmediate", "clearInterval", "clearTimeout",
@@ -382,7 +385,7 @@ const bundle = {
     reserved_a: "Reserved name \"{a}\".",
     subscript_a: "['{a}'] is better written in dot notation.",
     todo_comment: "Unexpected TODO comment.",
-    too_long: "Line is longer than 80 characters.",
+    too_long: "Line is longer than {a} characters.",
     too_many_digits: "Too many digits.",
     unclosed_comment: "Unclosed comment.",
     unclosed_mega: "Unclosed mega literal.",
@@ -744,12 +747,13 @@ function tokenize(source) {
         let at;
         if (
             option.nolong
-            && whole_line.length > 80
+            && option.maxlen
+            && whole_line.length > option.maxlen
             && !json_mode
             && first
             && !regexp_seen
         ) {
-            warn_at("too_long", line, 80);
+            warn_at("too_long", line, whole_line.length, option.maxlen);
         }
         column = 0;
         line += 1;
@@ -5235,7 +5239,7 @@ export default Object.freeze(function jslint(
     }
     return {
         directives,
-        edition: "2020-11-06-RHL044",
+        edition: "2020-11-06-RHL045",
         exports,
         froms,
         functions,
