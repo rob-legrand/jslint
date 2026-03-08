@@ -2649,7 +2649,7 @@ infix("(", 160, function (left) {
     advance(")", the_paren);
     if (the_paren.expression.length === 2) {
         the_paren.free = true;
-        if (the_argument.wrapped === true) {
+        if (the_argument.wrapped === true && the_argument.ellipsis !== true) {
             warn("unexpected_a", the_paren);
         }
         if (the_argument.id === "(") {
@@ -5235,7 +5235,7 @@ export default Object.freeze(function jslint(
     }
     return {
         directives,
-        edition: "2020-11-06-RHL043",
+        edition: "2020-11-06-RHL044",
         exports,
         froms,
         functions,
