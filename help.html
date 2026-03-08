@@ -465,6 +465,12 @@ a:active {
             <td>The number of spaces used for indentation (default is 3).</td>
         </tr>
         <tr>
+            <td id="long">Tolerate long source lines</td>
+            <td><code>long</code></td>
+            <td><code>true</code> if a line can contain any number of characters.
+                Otherwise, the character limit is determined by <code>maxlen</code>.</td>
+        </tr>
+        <tr>
             <td id="maxlen">Maximum line length</td>
             <td><code>maxlen</code></td>
             <td>The maximum number of characters in a line.</td>
@@ -500,11 +506,6 @@ a:active {
             <td><code>noletdec</code></td>
             <td><code>true</code> if <code>let</code> shouldn't be allowed.
                 It is better to use <code>const</code> when possible.</td>
-        </tr>
-        <tr>
-            <td id="nolong">Disallow long source lines</td>
-            <td><code>nolong</code></td>
-            <td><code>true</code> if a line can't contain more than 80 characters.</td>
         </tr>
         <tr>
             <td id="nolonghand">Disallow longhand property names</td>

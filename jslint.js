@@ -85,7 +85,7 @@
 
 // WARNING: JSLint will hurt your feelings.
 
-/*jslint double, funcstmt, indent: 4, maxlen: 80, nofor, nolong */
+/*jslint double, funcstmt, indent: 4, maxlen: 80, nofor */
 // for jslint.com: /*jslint unordered */
 /*property
     a, and, arity,
@@ -115,7 +115,9 @@
     indexOf, infix_in, init, initial, isArray,
     isInteger,
     isNaN, join, json, keys,
-    label, label_a, lbp, led, length, level, line, lines, live, loop, m,
+    label, label_a, lbp, led, length, level, line, lines, live,
+    long,
+    loop, m,
     margin, match,
     maxlen,
     message,
@@ -124,7 +126,6 @@
     missing_m, module, naked_block, name, names, nested_comment, new, node,
     nofor,
     noletdec,
-    nolong,
     nolonghand,
     not_label_a, nr, nud, number_isNaN, ok, open, opening, option,
     out_of_scope_a, parameters, parent, pop, property, push, quote, raw,
@@ -245,6 +246,7 @@ const allowed_option = {
     funcstmt: false,
     getset: false,
     indent: 3,
+    long: false,
     maxlen: 160,
     methodshort: false,
     node: [
@@ -255,7 +257,6 @@ const allowed_option = {
     ],
     nofor: false,
     noletdec: false,
-    nolong: false,
     nolonghand: false,
     this: false,
     vardec: false,
@@ -747,7 +748,7 @@ function tokenize(source) {
 
         let at;
         if (
-            option.nolong
+            !option.long
             && option.maxlen
             && whole_line.length > option.maxlen
             && !json_mode
@@ -5240,7 +5241,7 @@ export default Object.freeze(function jslint(
     }
     return {
         directives,
-        edition: "2020-11-06-RHL045",
+        edition: "2020-11-06-RHL046",
         exports,
         froms,
         functions,
