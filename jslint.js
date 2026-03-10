@@ -248,7 +248,7 @@ const allowed_option = {
     getset: false,
     indent: 3,
     long: false,
-    maxlen: 160,
+    maxlen: 120,
     methodshort: false,
     node: [
         "Buffer", "clearImmediate", "clearInterval", "clearTimeout",
@@ -5241,7 +5241,7 @@ export default Object.freeze(function jslint(
     }
     return {
         directives,
-        edition: "2020-11-06-RHL047",
+        edition: "2020-11-06-RHL048",
         exports,
         froms,
         functions,
