@@ -85,7 +85,7 @@
 
 // WARNING: JSLint will hurt your feelings.
 
-/*jslint double, funcstmt, indent: 4, maxlen: 80, nofor */
+/*jslint double, funcstmt, indent: 4, maxlen: 80 */
 // for jslint.com: /*jslint unordered */
 /*property
     a, and, arity,
@@ -102,6 +102,7 @@
     expected_identifier_a, expected_line_break_a_b, expected_regexp_factor_a,
     expected_space_a_b, expected_statements_a, expected_string_a,
     expected_type_string_a, exports, expression, extra, finally, flag,
+    for,
     forEach, free, freeze, freeze_exports, from,
     fromCharCode,
     froms, fud, fudge,
@@ -124,7 +125,6 @@
     methodshort,
     misplaced_a, misplaced_directive_a, missing_browser,
     missing_m, module, naked_block, name, names, nested_comment, new, node,
-    nofor,
     noletdec,
     nolonghand,
     not_label_a, nr, nud, number_isNaN, ok, open, opening, option,
@@ -242,6 +242,7 @@ const allowed_option = {
     ],
     double: false,
     eval: false,
+    for: false,
     fudge: false,
     funcstmt: false,
     getset: false,
@@ -255,7 +256,6 @@ const allowed_option = {
         "setImmediate", "setInterval", "setTimeout", "TextDecoder",
         "TextEncoder", "URL", "URLSearchParams", "__dirname", "__filename"
     ],
-    nofor: false,
     noletdec: false,
     nolonghand: false,
     this: false,
@@ -3668,7 +3668,7 @@ stmt("export", function () {
 stmt("for", function () {
     let first;
     const the_for = token;
-    if (option.nofor) {
+    if (!option.for) {
         warn("unexpected_a", the_for);
     }
     not_top_level(the_for);
@@ -5241,7 +5241,7 @@ export default Object.freeze(function jslint(
     }
     return {
         directives,
-        edition: "2020-11-06-RHL046",
+        edition: "2020-11-06-RHL047",
         exports,
         froms,
         functions,
