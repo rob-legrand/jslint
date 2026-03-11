@@ -264,7 +264,7 @@ const allowed_option = {
 };
 
 const anticondition = populate([
-    "~", "&", "|", "^", "<<", ">>", ">>>", "+", "-", "*", "/", "%",
+    "~", "&", "|", "^", "<<", ">>", ">>>", "+", "-", "*", "/", "%", "**",
     "typeof", "(number)", "(string)"
 ]);
 
@@ -5234,7 +5234,7 @@ export default Object.freeze(function jslint(
     }
     return {
         directives,
-        edition: "2020-11-06-RHL049",
+        edition: "2020-11-06-RHL050",
         exports,
         froms,
         functions,
