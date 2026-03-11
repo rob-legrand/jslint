@@ -4555,14 +4555,7 @@ postaction("binary", "(", function (thing) {
             if (
                 !option.arraycnstr
                 || arg.length !== 2
-                || arg[1].id === "(regexp)"
-                || arg[1].id === "(string)"
-                || arg[1].id === "=>"
-                || arg[1].id === "["
-                || arg[1].id === "false"
-                || arg[1].id === "function"
-                || arg[1].id === "true"
-                || arg[1].id === "{"
+                || arg[1].id !== "(number)"
             ) {
                 warn("expected_a_b", left, "[]", (
                     the_new !== undefined
@@ -5241,7 +5234,7 @@ export default Object.freeze(function jslint(
     }
     return {
         directives,
-        edition: "2020-11-06-RHL048",
+        edition: "2020-11-06-RHL049",
         exports,
         froms,
         functions,
