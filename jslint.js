@@ -113,7 +113,9 @@
     inc,
     includes,
     indent,
-    indexOf, infix_in, init, initial, isArray,
+    indexOf, infix_in, init,
+    initdec,
+    initial, isArray,
     isInteger,
     isNaN, join, json, keys,
     label, label_a, lbp, led, length, level, line, lines, live,
@@ -247,6 +249,7 @@ const allowed_option = {
     funcstmt: false,
     getset: false,
     indent: 3,
+    initdec: false,
     long: false,
     maxlen: 120,
     methodshort: false,
@@ -3516,7 +3519,7 @@ function do_var() {
                 warn("unexpected_a", name);
             }
             enroll(name, "variable", is_const);
-            if (!is_const && next_token.id === "=") {
+            if (!option.initdec && !is_const && next_token.id === "=") {
                 warn("unexpected_a_after_b", name, "=", name.id);
             }
             if (next_token.id === "=" || is_const) {
@@ -5234,7 +5237,7 @@ export default Object.freeze(function jslint(
     }
     return {
         directives,
-        edition: "2020-11-06-RHL051",
+        edition: "2020-11-06-RHL052",
         exports,
         froms,
         functions,
