@@ -3516,7 +3516,7 @@ function do_var() {
                 warn("unexpected_a", name);
             }
             enroll(name, "variable", is_const);
-            if (the_statement.id === "var" && next_token.id === "=") {
+            if (!is_const && next_token.id === "=") {
                 warn("unexpected_a_after_b", name, "=", name.id);
             }
             if (next_token.id === "=" || is_const) {
@@ -5234,7 +5234,7 @@ export default Object.freeze(function jslint(
     }
     return {
         directives,
-        edition: "2020-11-06-RHL050",
+        edition: "2020-11-06-RHL051",
         exports,
         froms,
         functions,
