@@ -2689,8 +2689,7 @@ infix(".", 170, function (left) {
         && (
             left.id !== "["
             || (
-                name.id !== "concat"
-                && name.id !== "forEach"
+                name.id !== "forEach"
                 && name.id !== "some"
                 && name.id !== "every"
                 && name.id !== "join"
@@ -2759,8 +2758,7 @@ infix("?.", 170, function (left) {
         && (
             left.id !== "["
             || (
-                name.id !== "concat"
-                && name.id !== "forEach"
+                name.id !== "forEach"
                 && name.id !== "some"
                 && name.id !== "every"
                 && name.id !== "join"
@@ -5241,7 +5239,7 @@ export default Object.freeze(function jslint(
     }
     return {
         directives,
-        edition: "2020-11-06-RHL054",
+        edition: "2020-11-06-RHL055",
         exports,
         froms,
         functions,
