@@ -134,9 +134,10 @@
     redefinition_a_b,
     reduce,
     replace, required_a_optional_b, reserved_a, role, search,
-    shebang, signature, slice, some, sort, split, startsWith, statement,
+    shebang, signature, slice, some, split, startsWith, statement,
     stop, subscript_a, switch, test, this, thru,
     toLowerCase,
+    toSorted,
     toString, todo_comment,
     tokens, too_long, too_many_digits, tree, try, type, u, unclosed_comment,
     unclosed_mega, unclosed_string, undeclared_a, unexpected_a,
@@ -5237,7 +5238,7 @@ export default Object.freeze(function jslint(
     }
     return {
         directives,
-        edition: "2020-11-06-RHL052",
+        edition: "2020-11-06-RHL053",
         exports,
         froms,
         functions,
@@ -5257,7 +5258,7 @@ export default Object.freeze(function jslint(
         stop: early_stop,
         tokens,
         tree,
-        warnings: warnings.sort(function (a, b) {
+        warnings: warnings.toSorted(function (a, b) {
             return a.line - b.line || a.column - b.column;
         })
     };

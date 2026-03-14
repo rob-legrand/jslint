@@ -8,8 +8,9 @@
     closure, column, context, edition, error, exports, filter, forEach, freeze,
     froms, fudge, function, functions, global, id, isArray, join, json, keys,
     length, level, line, lines, message, module, name, names, option,
-    parameters, parent, property, push, replace, role, signature, sort, stop,
+    parameters, parent, property, push, replace, role, signature, stop,
     test,
+    toSorted,
     warnings
 */
 
@@ -111,9 +112,9 @@ export default Object.freeze({
         if (data.functions.length === 0) {
             output.push("<center>There are no functions.</center>");
         }
-        let global = Object.keys(data.global.context).sort();
-        let froms = data.froms.sort();
-        let exports = Object.keys(data.exports).sort();
+        let global = Object.keys(data.global.context).toSorted();
+        let froms = data.froms.toSorted();
+        let exports = Object.keys(data.exports).toSorted();
         if (global.length + froms.length + exports.length > 0) {
             output.push("<dl class=level0>");
             detail(mode, global);
@@ -156,10 +157,10 @@ export default Object.freeze({
                     });
                     detail(
                         "parameter",
-                        params.sort()
+                        params.toSorted()
                     );
                 }
-                list.sort();
+                list = list.toSorted();
                 detail("variable", list.filter(function (id) {
                     let the_variable = context[id];
                     return (
@@ -211,7 +212,7 @@ export default Object.freeze({
         let properties = Object.keys(data.property);
 
         if (properties.length > 0) {
-            properties.sort().forEach(function (key) {
+            properties.toSorted().forEach(function (key) {
                 if (not_first) {
                     output.push(",");
                     length += 2;
