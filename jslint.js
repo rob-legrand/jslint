@@ -93,7 +93,7 @@
     assign, b, bad_assignment_a, bad_directive_a, bad_get,
     bad_module_name_a, bad_option_a, bad_property_a, bad_set, bitwise, block,
     body, browser, c, calls, catch, charCodeAt, closer, closure, code, column,
-    concat, constant, context, convert, couch, create, d, dead, default, devel,
+    constant, context, convert, couch, create, d, dead, default, devel,
     directive, directives, disrupt, dot, double,
     duplicate_a, edition, ellipsis, else,
     empty_block, eval, every, expected_a, expected_a_at_b_c,
@@ -2854,7 +2854,10 @@ function do_tick() {
 infix("`", 160, function (left) {
     const the_tick = do_tick();
     left_check(left, the_tick);
-    the_tick.expression = [left].concat(the_tick.expression);
+    the_tick.expression = [
+        left,
+        ...the_tick.expression
+    ];
     return the_tick;
 });
 
@@ -5238,7 +5241,7 @@ export default Object.freeze(function jslint(
     }
     return {
         directives,
-        edition: "2020-11-06-RHL053",
+        edition: "2020-11-06-RHL054",
         exports,
         froms,
         functions,
