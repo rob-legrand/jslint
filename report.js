@@ -126,7 +126,7 @@ export default Object.freeze({
         if (data.functions.length > 0) {
             data.functions.forEach(function (the_function) {
                 let context = the_function.context;
-                let list = Object.keys(context);
+                let list = Object.keys(context).toSorted();
                 output.push(
                     "<dl class=level",
                     entityify(the_function.level),
@@ -160,7 +160,6 @@ export default Object.freeze({
                         params.toSorted()
                     );
                 }
-                list = list.toSorted();
                 detail("variable", list.filter(function (id) {
                     let the_variable = context[id];
                     return (
