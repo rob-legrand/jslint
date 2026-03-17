@@ -5239,7 +5239,7 @@ export default Object.freeze(function jslint(
     }
     return {
         directives,
-        edition: "2020-11-06-RHL055",
+        edition: "2020-11-06-RHL056",
         exports,
         froms,
         functions,
@@ -5259,8 +5259,8 @@ export default Object.freeze(function jslint(
         stop: early_stop,
         tokens,
         tree,
-        warnings: warnings.toSorted(function (a, b) {
-            return a.line - b.line || a.column - b.column;
-        })
+        warnings: warnings.toSorted(
+            (a, b) => a.line - b.line || a.column - b.column
+        )
     };
 });
