@@ -4,6 +4,7 @@
 
 // Generate JSLint HTML reports.
 
+/*jslint double, funcstmt, indent: 4, initdec, maxlen: 80 */
 /*property
     closure, column, context, edition, error, exports, filter, forEach, freeze,
     froms, fudge, function, functions, global, id, isArray, join, json, keys,
