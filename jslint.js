@@ -3291,7 +3291,7 @@ prefix("{", function () {
                     value = expression(Infinity, true);
                 } else if (next_token.id === "(") {
                     if (
-                        !option.methodshort
+                        (!option.methodshort && typeof extra !== "string")
                         || name.id === "function"
                     ) {
                         warn(
