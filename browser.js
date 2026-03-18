@@ -2,10 +2,7 @@
 // 2018-06-16
 // Copyright (c) 2015 Douglas Crockford  (www.JSLint.com)
 
-/*jslint
-    browser
-*/
-
+/*jslint browser, double, funcstmt, indent: 4, initdec, maxlen: 80 */
 /*property
     checked, create, disable, display, error, focus, forEach, function,
     getElementById, innerHTML, join, length, map, onchange, onclick, onscroll,
