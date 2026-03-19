@@ -3288,7 +3288,7 @@ prefix("{", function () {
                     if (typeof extra === "string") {
                         advance("(");
                     } else {
-                        advance(":");
+                        warn("expected_a_b", next_token, ":", next_token.id);
                     }
                     value = expression(Infinity, true);
                 } else if (next_token.id === "(") {
@@ -5241,7 +5241,7 @@ export default Object.freeze(function jslint(
     }
     return {
         directives,
-        edition: "2020-11-06-RHL057",
+        edition: "2020-11-06-RHL058",
         exports,
         froms,
         functions,
