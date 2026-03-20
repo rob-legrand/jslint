@@ -130,7 +130,9 @@
     noletdec,
     nolonghand,
     not_label_a, nr, nud, number_isNaN, ok, open, opening, option,
-    out_of_scope_a, parameters, parent, pop, property, push, quote, raw,
+    out_of_scope_a, parameters, parent, pop, property,
+    propshort,
+    push, quote, raw,
     redefinition_a_b,
     reduce,
     replace, required_a_optional_b, reserved_a, role, search,
@@ -262,6 +264,7 @@ const allowed_option = {
     ],
     noletdec: false,
     nolonghand: false,
+    propshort: false,
     this: false,
     vardec: false,
     white: false
@@ -3287,7 +3290,7 @@ prefix("{", function () {
                 if (next_token.id === "}" || next_token.id === ",") {
                     if (typeof extra === "string") {
                         advance("(");
-                    } else {
+                    } else if (!option.propshort) {
                         warn("expected_a_b", next_token, ":", next_token.id);
                     }
                     value = expression(Infinity, true);
@@ -5241,7 +5244,7 @@ export default Object.freeze(function jslint(
     }
     return {
         directives,
-        edition: "2020-11-06-RHL058",
+        edition: "2020-11-06-RHL059",
         exports,
         froms,
         functions,
