@@ -128,7 +128,6 @@
     misplaced_a, misplaced_directive_a, missing_browser,
     missing_m, module, naked_block, name, names, nested_comment, new, node,
     noletdec,
-    nolonghand,
     not_label_a, nr, nud, number_isNaN, ok, open, opening, option,
     out_of_scope_a, parameters, parent, pop, property,
     propshort,
@@ -263,7 +262,6 @@ const allowed_option = {
         "TextEncoder", "URL", "URLSearchParams", "__dirname", "__filename"
     ],
     noletdec: false,
-    nolonghand: false,
     propshort: false,
     this: false,
     vardec: false,
@@ -3322,16 +3320,8 @@ prefix("{", function () {
                     if (typeof extra === "string") {
                         advance("(");
                     }
-                    let the_colon = next_token;
                     advance(":");
                     value = expression(0);
-                    if (
-                        option.nolonghand
-                        && value.id === name.id
-                        && value.id !== "function"
-                    ) {
-                        warn("unexpected_a", the_colon, ": " + name.id);
-                    }
                 }
                 value.label = name;
                 if (typeof extra === "string") {
@@ -5244,7 +5234,7 @@ export default Object.freeze(function jslint(
     }
     return {
         directives,
-        edition: "2020-11-06-RHL059",
+        edition: "2020-11-06-RHL060",
         exports,
         froms,
         functions,
