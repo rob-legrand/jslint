@@ -85,7 +85,7 @@
 
 // WARNING: JSLint will hurt your feelings.
 
-/*jslint double, funcstmt, indent: 4, initdec, maxlen: 80, propshort */
+/*jslint double, funcstmt, indent: 4, initdec, propshort */
 // for jslint.com: /*jslint unordered */
 /*property
     a, and, arity,
