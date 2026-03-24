@@ -218,7 +218,7 @@ export default Object.freeze({
                     length += 2;
                 }
                 not_first = true;
-                if (length + key.length >= 80) {
+                if (length + key.length >= 0) {
                     length = 3;
                     output.push("\n  ");
                 }
