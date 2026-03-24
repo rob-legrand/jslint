@@ -257,7 +257,6 @@
     thru,
     toLowerCase,
     toSorted,
-    toString,
     todo_comment,
     tokens,
     too_long,
