@@ -4,9 +4,30 @@
 
 /*jslint browser, double, funcstmt, indent: 4, initdec */
 /*property
-    checked, create, disable, display, error, focus, forEach, function,
-    getElementById, innerHTML, join, length, map, onchange, onclick, onscroll,
-    property, querySelectorAll, scrollTop, select, split, style, title, value
+    checked,
+    create,
+    disable,
+    display,
+    error,
+    focus,
+    forEach,
+    function,
+    getElementById,
+    innerHTML,
+    join,
+    length,
+    map,
+    onchange,
+    onclick,
+    onscroll,
+    property,
+    querySelectorAll,
+    scrollTop,
+    select,
+    split,
+    style,
+    title,
+    value
 */
 
 import jslint from "./jslint.js";
