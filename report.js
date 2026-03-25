@@ -238,27 +238,16 @@ export default Object.freeze({
 
 // Produce the /*property*/ directive.
 
-        let not_first = false;
-        let output = ["/*property"];
-        let length = 1111;
-        let properties = Object.keys(data.property);
+        const properties = Object.keys(data.property);
 
-        if (properties.length > 0) {
-            properties.toSorted().forEach(function (key) {
-                if (not_first) {
-                    output.push(",");
-                    length += 2;
-                }
-                not_first = true;
-                if (length + key.length >= 0) {
-                    length = 3;
-                    output.push("\n  ");
-                }
-                output.push(" ", key);
-                length += key.length;
-            });
-            output.push("\n*/\n");
-            return output.join("");
-        }
+        return (
+            properties.length > 0
+            ? (
+                "/*property\n   "
+                + properties.toSorted().join(",\n   ")
+                + "\n*/\n"
+            )
+            : undefined
+        );
     }
 });
