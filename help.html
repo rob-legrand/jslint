@@ -329,9 +329,11 @@ a:active {
     This directive inhibits warnings, but it does not declare the names in the
     execution environment.
 <p>For example:
-<blockquote><code>/*global</code>
-<div><code>ADSAFE, report, jslint</code></div>
-<code>*/</code></blockquote>
+<blockquote><code>/*global
+    <div>ADSAFE,</div>
+    <div>report,</div>
+    <div>jslint</div>
+    */</code></blockquote>
 <p>instructs JSLint not to give warnings about the global
     variables <code>ADsafe</code>, <code>report</code> and <code>jslint</code>.
     However, if any of those names are expected to be supplied by other files
