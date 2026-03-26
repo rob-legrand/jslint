@@ -245,7 +245,7 @@ export default Object.freeze({
             ? (
                 "/*property\n   "
                 + properties.toSorted().join(",\n   ")
-                + "\n*/\n"
+                + "\n*/"
             )
             : undefined
         );
