@@ -335,9 +335,11 @@ function populate(array, object = empty(), value = true) {
 
 const uppercaseA = "A";
 // [
-//    "ignore", "ignore0", "ignore1", . . . "ignore9",
+//    "ignore",
+//    "ignore0", "ignore1", . . . "ignore9",
 //    "ignoreA", "ignoreB", . . . "ignoreZ",
-//    "_", "_0", "_1", . . . "_9",
+//    "_",
+//    "_0", "_1", . . . "_9",
 //    "_A", "_B", . . . "_Z",
 //    "_a", "_b", . . . "_z"
 // ]
