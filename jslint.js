@@ -2859,6 +2859,7 @@ infix(".", 170, function (left) {
                 && name.id !== "toReversed"
                 && name.id !== "find"
                 && name.id !== "findIndex"
+                && name.id !== "includes"
             )
         )
         && (left.id !== "+" || name.id !== "slice")
@@ -2928,6 +2929,7 @@ infix("?.", 170, function (left) {
                 && name.id !== "toReversed"
                 && name.id !== "find"
                 && name.id !== "findIndex"
+                && name.id !== "includes"
             )
         )
         && (left.id !== "+" || name.id !== "slice")
