@@ -2843,6 +2843,7 @@ infix(".", 170, function (left) {
                 && name.id !== "replace"
                 && name.id !== "toLowerCase"
                 && name.id !== "toUpperCase"
+                && name.id !== "includes"
             )
         )
         && (
@@ -2913,6 +2914,7 @@ infix("?.", 170, function (left) {
                 && name.id !== "replace"
                 && name.id !== "toLowerCase"
                 && name.id !== "toUpperCase"
+                && name.id !== "includes"
             )
         )
         && (
