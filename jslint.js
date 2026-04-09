@@ -2861,6 +2861,8 @@ infix(".", 170, function (left) {
                 && name.id !== "find"
                 && name.id !== "findIndex"
                 && name.id !== "includes"
+                && name.id !== "flat"
+                && name.id !== "flatMap"
             )
         )
         && (left.id !== "+" || name.id !== "slice")
@@ -2932,6 +2934,8 @@ infix("?.", 170, function (left) {
                 && name.id !== "find"
                 && name.id !== "findIndex"
                 && name.id !== "includes"
+                && name.id !== "flat"
+                && name.id !== "flatMap"
             )
         )
         && (left.id !== "+" || name.id !== "slice")
