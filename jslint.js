@@ -1034,7 +1034,7 @@ function tokenize(source) {
                 if (some_digits(rx_hexs) > 5) {
                     warn_at("too_many_digits", line, column - 1);
                 }
-                if (next_char() !== "}") {
+                if (char !== "}") {
                     stop_at("expected_a_before_b", line, column, "}", char);
                 }
                 return next_char();
