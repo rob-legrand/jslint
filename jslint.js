@@ -1031,7 +1031,7 @@ function tokenize(source) {
                 if (json_mode) {
                     warn_at("unexpected_a", line, column - 1, char);
                 }
-                if (some_digits(rx_hexs) > 5) {
+                if (some_digits(rx_hexs) > 6) {
                     warn_at("too_many_digits", line, column - 1);
                 }
                 if (char !== "}") {
