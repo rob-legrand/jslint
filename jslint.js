@@ -2755,12 +2755,12 @@ assignment("-=");
 assignment("*=");
 assignment("/=");
 assignment("%=");
-assignment("&=");
-assignment("|=");
-assignment("^=");
 assignment("<<=");
 assignment(">>=");
 assignment(">>>=");
+assignment("&=");
+assignment("^=");
+assignment("|=");
 
 infix("??", 35);
 infix("||", 40);
