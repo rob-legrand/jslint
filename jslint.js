@@ -678,7 +678,7 @@ const rx_token = tag_regexp ` ^ (
   | - [ = \- ]?
   | [ \^ % ] =?
   | & &? =?
-  | \| [ | = ]?
+  | \| \|? =?
   | >{1,3} =?
   | < <? =?
   | ! (?:
@@ -5401,7 +5401,7 @@ export default Object.freeze(function jslint(
     }
     return {
         directives,
-        edition: "2020-11-06-RHL061",
+        edition: "2020-11-06-RHL062",
         exports,
         froms,
         functions,
