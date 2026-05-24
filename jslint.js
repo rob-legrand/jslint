@@ -2766,6 +2766,7 @@ assignment("^=");
 assignment("|=");
 assignment("&&=");
 assignment("||=");
+assignment("??=");
 
 infix("??", 35);
 infix("||", 40);
@@ -5405,7 +5406,7 @@ export default Object.freeze(function jslint(
     }
     return {
         directives,
-        edition: "2020-11-06-RHL067",
+        edition: "2020-11-06-RHL068",
         exports,
         froms,
         functions,
