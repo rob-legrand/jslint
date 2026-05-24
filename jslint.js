@@ -463,7 +463,7 @@ const relationop = populate([
 const spaceop = populate([
     "!=", "!==", "%", "%=", "&", "&=", "&&", "&&=", "*", "*=", "+=", "-=", "/",
     "/=", "<", "<=", "<<", "<<=", "=", "==", "===", "=>", ">", ">=",
-    ">>", ">>=", ">>>", ">>>=", "^", "^=", "|", "|=", "||", "||="
+    ">>", ">>=", ">>>", ">>>=", "^", "^=", "|", "|=", "||", "||=", "??"
 ]);
 
 const standard = [
@@ -5402,7 +5402,7 @@ export default Object.freeze(function jslint(
     }
     return {
         directives,
-        edition: "2020-11-06-RHL064",
+        edition: "2020-11-06-RHL065",
         exports,
         froms,
         functions,
