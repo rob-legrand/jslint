@@ -461,9 +461,12 @@ const relationop = populate([
 // This is the set of infix operators that require a space on each side.
 
 const spaceop = populate([
-    "!=", "!==", "%", "%=", "&", "&=", "&&", "&&=", "*", "*=", "+=", "-=", "/",
-    "/=", "<", "<=", "<<", "<<=", "=", "==", "===", "=>", ">", ">=",
-    ">>", ">>=", ">>>", ">>>=", "^", "^=", "|", "|=", "||", "||=", "??", "??="
+    "!=", "!==", "<", "<=", "==", "===", ">", ">=",
+    "%", "%=", "*", "*=", "+=", "-=", "/", "/=",
+    "&", "&=", "^", "^=", "|", "|=",
+    "&&", "&&=", "||", "||=", "??", "??=",
+    "<<", "<<=", ">>", ">>=", ">>>", ">>>=",
+    "=", "=>"
 ]);
 
 const standard = [
@@ -5406,7 +5409,7 @@ export default Object.freeze(function jslint(
     }
     return {
         directives,
-        edition: "2020-11-06-RHL068",
+        edition: "2020-11-06-RHL069",
         exports,
         froms,
         functions,
