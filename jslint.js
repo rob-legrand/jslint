@@ -462,7 +462,7 @@ const relationop = populate([
 
 const spaceop = populate([
     "!=", "!==", "<", "<=", "==", "===", ">", ">=",
-    "%", "%=", "*", "*=", "**", "+=", "-=", "/", "/=",
+    "%", "%=", "*", "*=", "**", "**=", "+=", "-=", "/", "/=",
     "&", "&=", "^", "^=", "|", "|=",
     "&&", "&&=", "||", "||=", "??", "??=",
     "<<", "<<=", ">>", ">>=", ">>>", ">>>=",
@@ -5412,7 +5412,7 @@ export default Object.freeze(function jslint(
     }
     return {
         directives,
-        edition: "2020-11-06-RHL071",
+        edition: "2020-11-06-RHL072",
         exports,
         froms,
         functions,
