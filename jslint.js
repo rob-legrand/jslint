@@ -2764,6 +2764,7 @@ assignment("-=");
 assignment("*=");
 assignment("/=");
 assignment("%=");
+assignment("**=");
 assignment("<<=");
 assignment(">>=");
 assignment(">>>=");
@@ -5412,7 +5413,7 @@ export default Object.freeze(function jslint(
     }
     return {
         directives,
-        edition: "2020-11-06-RHL072",
+        edition: "2020-11-06-RHL073",
         exports,
         froms,
         functions,
